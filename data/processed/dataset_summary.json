@@ -1,0 +1,26 @@
+{
+  "Nextcloud": {
+    "passages_per_version": {
+      "28": 736,
+      "29": 786,
+      "30": 851
+    },
+    "total_passages": 2373,
+    "queries_count": 114,
+    "stated_queries": 57,
+    "unstated_queries": 57,
+    "total_stale_links": 216
+  },
+  "Django": {
+    "passages_per_version": {
+      "4.2": 3800,
+      "5.0": 3826,
+      "5.1": 3878
+    },
+    "total_passages": 11504,
+    "queries_count": 200,
+    "stated_queries": 100,
+    "unstated_queries": 100,
+    "total_stale_links": 450
+  }
+}

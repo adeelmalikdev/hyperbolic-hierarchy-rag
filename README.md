@@ -11,9 +11,9 @@ Question: do hierarchy aware hyperbolic embeddings reduce these contradictory re
 
 ## Status
 
-- Phase 0: Repository skeleton created. Active.
-- Phase 1: Dataset collection and processing (pending).
-- Phase 2: Baselines implementation (pending).
-- Phase 3: Hyperbolic model implementation and training (pending).
-- Phase 4: Evaluation and metrics computation (pending).
-- Phase 5: Final report and presentation inputs (pending).
+- Phase 0: Repository skeleton created. Completed.
+- Phase 1: Dataset collection and processing. Completed. (13,877 passages, 314 benchmark queries, 666 conflict links).
+- Phase 2: Baselines implementation. Pending.
+- Phase 3: Hyperbolic model implementation and training. Pending.
+- Phase 4: Evaluation and metrics computation. Pending.
+- Phase 5: Final report and presentation inputs. Pending.
