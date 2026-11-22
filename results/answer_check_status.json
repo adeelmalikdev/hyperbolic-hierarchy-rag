@@ -1,0 +1,7 @@
+{
+  "status": "SKIPPED",
+  "reason": "No LLM API key is available in the environment (OPENAI_API_KEY, ANTHROPIC_API_KEY, GEMINI_API_KEY, and GOOGLE_API_KEY are not set).",
+  "protocol_note": "Rule 1 & Rule 2: Honest reporting without synthetic numbers or ungrounded simulation.",
+  "generation_prompt_template": "You are a technical support assistant.\nAnswer the user's question using ONLY the provided documentation passages.\nFor every instruction or parameter mentioned, cite the exact version of the product you are using.\nDo not assume or invent information not present in the passages.\n\nPassages:\n{passages_text}\n\nUser Question: {query_text}\n\nAnswer:",
+  "judge_prompt_template": "You are evaluating technical support answers for version consistency.\nA question was asked about a specific target version. The assistant was provided documentation passages.\n\nTarget Version: {target_version}\nUser Question: {query_text}\nAssistant Answer: {answer_text}\nGold Reference Passage: {gold_text}\n\nJudge the answer into one of these exact categories:\n1. version_correct: The answer provides instructions that match the target version accurately without mixing steps from older versions.\n2. mixed_version: The answer mixes instructions, commands, or parameters from multiple conflicting versions (contradictory advice).\n3. wrong: The answer is factually incorrect, incomplete, or fails to answer the question.\n\nOutput exactly one line:\nCATEGORY: [version_correct | mixed_version | wrong]\nREASON: [one sentence explanation]\n"
+}
