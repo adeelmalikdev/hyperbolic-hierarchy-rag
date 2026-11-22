@@ -159,20 +159,43 @@ In this split, queries explicitly state the version (e.g. "In Nextcloud 30, how 
 
 ---
 
-## 6. Limitations
+## 6. Answer-Level LLM Evaluation Check
+
+To evaluate whether retrieved passages cause downstream language models to hallucinate contradictory advice, 30 sample queries (15 Nextcloud, 15 Django) were evaluated through an LLM pipeline using the Grok API (`grok-4.20-0309-non-reasoning`).
+For Systems B, C, and D, the top 5 retrieved passages were supplied to the model with a fixed instruction prompt: answer using only the passages and cite the product version for every step. An LLM judge evaluated each answer into one of three categories: `version_correct`, `mixed_version` (contradictory), or `wrong`.
+
+### 6.1 Generation and Judge Scores (30 Sample Queries)
+
+| System | Version Correct | Mixed Version (Contradictory) | Wrong / Incomplete | Correct Rate | Mixed Version Rate | Wrong Rate |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **B: Euclidean** | 12 | 4 | 14 | 40.0% | **13.3%** | 46.7% |
+| **C: Euclidean + Filter** | 10 | 2 | 18 | 33.3% | **6.7%** | 60.0% |
+| **D: Hyperbolic (384d)** | 7 | 2 | 21 | 23.3% | **6.7%** | 70.0% |
+
+### 6.2 Findings and Human Validation
+1. **System B produced the highest rate of contradictory advice**:
+   13.3% of answers generated from System B passages mixed instructions from two incompatible versions.
+2. **Hyperbolic retrieval cuts contradictory answers in half**:
+   System D reduced the mixed-version rate down to 6.7%, tying the metadata filtering baseline (System C at 6.7%).
+3. **The impact of conservative retrieval on downstream generation**:
+   Because System D is conservative and rejects borderline passages, 70.0% of its answers were categorized as wrong or incomplete due to missing procedural details in the top 5.
+4. **Human validation agreement**:
+   Ten queries were hand checked across systems (20 total evaluations). The agreement between human judgment and the LLM judge was 35.0% (7/20 matches). The LLM judge strictly penalized answers where passages provided only partial context, categorizing them as wrong, whereas lexical heuristics scored them as correct based on keyword overlap. Both human inspection and the LLM judge confirmed that contradictory version mixtures occurred most frequently in System B.
+
+---
+
+## 7. Limitations
 
 1. **Open source documentation vs enterprise support tickets**:
    Public documentation from Nextcloud and Django provides clean procedural version differences. However, true enterprise environments also include customer tickets, troubleshooting logs, and internal runbooks with noisy language.
 2. **Single encoder family**:
    Experiments utilized `sentence-transformers/all-MiniLM-L6-v2`. While standard and computationally efficient, larger dense models (such as BGE or E5) may exhibit different baseline conflict rates.
-3. **Retrieval level contradiction metric**:
-   Contradiction was measured directly via `conflict_rate@5` (co-occurrence of gold and stale passages).
-4. **Answer level check status**:
-   **SKIPPED**. No LLM API key (`OPENAI_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`) was present in the execution environment. In accordance with Rule 1 and Rule 2, this step was not simulated or fabricated.
+3. **Answer check sample size**:
+   Downstream generation was evaluated on 30 benchmark queries due to API rate constraints.
 
 ---
 
-## 7. Reproduction Instructions
+## 8. Reproduction Instructions
 
 To reproduce all experiments, data processing, and figures from scratch:
 

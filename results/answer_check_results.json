@@ -1,0 +1,1537 @@
+{
+  "metadata": {
+    "provider": "grok",
+    "model": "grok-4.20-0309-non-reasoning",
+    "num_queries": 30,
+    "systems": [
+      "B_Euclidean",
+      "C_Euclidean_Filter",
+      "D_Hyperbolic_384d"
+    ]
+  },
+  "query_evaluations": [
+    {
+      "query_id": "q_nextcloud_0000",
+      "query_text": "In Nextcloud 30, how do I configure Users tab?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_configuration_user_user_auth_ldap_rst_1",
+            "nextcloud_28_admin_manual_configuration_user_user_auth_ldap_rst_1",
+            "nextcloud_30_admin_manual_configuration_user_user_auth_ldap_rst_1",
+            "nextcloud_28_admin_manual_configuration_user_user_configuration_rst_0",
+            "nextcloud_29_admin_manual_configuration_user_user_configuration_rst_0"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for Nextcloud 30, there is no specific \"Users tab\" mentioned in the LDAP Configuration or User management sections.\n\nThe available passages for Nextcloud 30 (Passage 3) only cover enabling and configuring the **LDAP user and group backend**:\n\n> First enable the LDAP user and group backend app on the Apps page in Nextcloud. Then go to your Admin page to configure it. The LDAP configuration panel has four tabs. A correctly completed first tab (\"Server\") is mandatory to access the other tabs. A green indicator lights when the configuration is correct. Hover your cursor over the fields to see some pop-up tooltips.  \n> *(Product: Nextcloud, Version: 30, Section: Configuration)*\n\nNo documentation is provided in the passages for a \"Users tab\" in Nextcloud 30. The User management pages are only documented for versions 28 and 29.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly states that the provided Nextcloud 30 passages do not mention a \"Users tab\" and only describe the four-tab LDAP configuration (with the Server tab required first), without introducing or mixing any instructions from versions 28 or 29."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_user_user_auth_ldap_rst_1",
+            "nextcloud_30_admin_manual_configuration_user_user_configuration_rst_0",
+            "nextcloud_30_user_manual_userpreferences_rst_0",
+            "nextcloud_30_admin_manual_configuration_user_user_configuration_rst_4",
+            "nextcloud_30_admin_manual_configuration_user_user_configuration_rst_2"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30**, there is no section or instructions titled \"Users tab\" or \"configure Users tab\".\n\nThe documentation for **Nextcloud 30** describes the following instead:\n\n- **LDAP user and group backend configuration** is done on the **Admin page** (under the \"Server\" tab of the LDAP configuration panel). A correctly completed first tab (\"Server\") is mandatory. (Passage 1, Product: Nextcloud, Version: 30, Section: Configuration)\n\n- **User management** is performed on the **User management page** of the Nextcloud Web UI (not called a \"Users tab\"). From there you can create users, edit full names/passwords, set quotas, manage groups, etc. (Passage 2, Product: Nextcloud, Version: 30, Section: User management)\n\n- Personal user preferences (including full name, email, password, etc.) are configured by clicking your profile picture \u2192 **Settings**. (Passage 3, Product: Nextcloud, Version: 30, Section: Setting your preferences)\n\n- To change a user\u2019s **display name** (Full Name), hover over the Full Name field on the User management page and click the pencil icon. The **Login Name** cannot be changed. (Passage 4, Product: Nextcloud, Version: 30, Section: Renaming a user)\n\n- To **create a new user**, use the User management page: enter Login Name and initial Password, optionally assign groups, and click Create. (Passage 5, Product: Nextcloud, Version: 30, Section: Creating a new user)\n\nNo passage mentions a \"Users tab\" that can be configured. If you are referring to the **User management page**, the instructions are in Passage 2 (Nextcloud 30). Please provide more details if this does not address your question.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly identifies that no \"Users tab\" exists in Nextcloud 30, directs the user to the proper User management page and LDAP configuration sections that match the target version 30, and explicitly references only passages tied to version 30 without introducing any instructions from prior versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_configuration_user_user_auth_ldap_rst_3",
+            "nextcloud_30_admin_manual_configuration_user_user_auth_ldap_rst_3",
+            "nextcloud_28_admin_manual_configuration_user_user_auth_ldap_rst_3",
+            "nextcloud_30_admin_manual_configuration_server_bruteforce_configuration_rst_5",
+            "nextcloud_28_admin_manual_configuration_server_bruteforce_configuration_rst_5"
+          ],
+          "answer": "**Answer:**\n\nIn Nextcloud 30 (Passage 2, Product: Nextcloud, Version: 30, Section: Users tab), use the Users tab to control which LDAP users are listed as Nextcloud users on your Nextcloud server.\n\nTo configure it:\n\n- Select **Only those object classes**: Nextcloud will determine the object classes that are typically available for user objects in your LDAP. Nextcloud will automatically select the object class that returns the highest amount of users. You may select multiple object classes. (Passage 2, Version: 30)\n\n- Select **Only from those groups**: If your LDAP server supports the member-of-overlay in LDAP filters, you can define that only users from one or more certain groups are allowed to appear in user listings in Nextcloud. By default, no value will be selected. You may select multiple groups. If your LDAP server does not support the member-of-overlay in LDAP filters, the input field is disabled. Please contact your LDAP administrator. (Passage 2, Version: 30)\n\n- Optionally, click **Edit LDAP Query** to toggle the filter mode and enter a raw LDAP filter directly. Example: `(&(objectClass=inetOrgPerson)(memberOf=cn=nextcloudusers,ou=groups, dc=example,dc=com))` (Passage 2, Version: 30)\n\nNote that the **x users found** indicator tells you approximately how many users will be listed in Nextcloud. The number updates automatically after any changes. (Passage 2, Version: 30)\n\nUse the Login Attributes tab to control which LDAP users can actually login. (Passage 2, Version: 30)",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer is fully consistent with the Gold Reference Passage for Nextcloud 30, accurately extracts and presents all relevant configuration options for the Users tab without introducing any instructions, parameters, or steps from other versions."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0001",
+      "query_text": "What is the recommended setup for LLM Processing in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_ai_app_context_chat_rst_1",
+            "nextcloud_29_admin_manual_installation_system_requirements_rst_0",
+            "nextcloud_28_admin_manual_installation_system_requirements_rst_0",
+            "nextcloud_30_admin_manual_installation_system_requirements_rst_0",
+            "nextcloud_30_admin_manual_ai_app_translate2_rst_1"
+          ],
+          "answer": "**Recommended setup for LLM Processing in Nextcloud 30 (Product: Nextcloud, Version: 30)**\n\nAccording to Passage 1 (Product: Nextcloud, Version: 30, Section: Requirements) for the LLM app:\n\n**GPU Setup:**\n- CUDA >= v12.2 on your host system (Passage 1, Version: 30)\n- A NVIDIA GPU with at least 2GB VRAM (Passage 1, Version: 30)\n- At least 8GB of system RAM + 2 GB + additional 500MB for each concurrent request made to the backend (Passage 1, Version: 30)\n- A dedicated machine is recommended (Passage 1, Version: 30)\n\n**CPU Setup (when not using a Free text-to-text provider on the same machine):**\n- At least 12GB of system RAM + 2 GB + additional 500MB for each request (Passage 1, Version: 30)\n- 8 GB is recommended for the default settings in the above case (Passage 1, Version: 30)\n- You will need 4+ cores for the embedding model only (Passage 1, Version: 30)\n\n**General notes from Passage 1 (Version: 30):**\n- Minimal Nextcloud version: 30\n- Nextcloud AIO is supported\n- This app makes use of the configured free text-to-text task processing provider instead of running its own language model by default\n- The requirements for the Free text-to-text providers should be checked separately\n- llm2's requirements can be found in its own documentation\n- integrationopenai does not have any additional GPU requirements\n- Backed configuration needs changes to make use of extra cores (refer to Configuration Options)\n\n**Server recommendations for Nextcloud 30** (from Passage 4, Product: Nextcloud, Version: 30, Section: Server):\n- Recommended OS: Ubuntu 22.04 LTS or Red Hat Enterprise Linux 9\n- Recommended Database: MariaDB 10.11\n- Recommended PHP: 8.3\n- Webserver: Apache 2.4 with mod_php or php-fpm (recommended) or nginx with php-fpm\n\n**Note:** Passage 5 (also Version 30) lists slightly different hardware numbers (4GB VRAM / 6GB RAM / 4-8 cores), but the primary LLM-specific passage is Passage 1. Always refer to the exact provider documentation for the chosen text-to-text backend.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is completely irrelevant to the user's question; it provides hardware requirements for the \"LLM\" app (local large language model inference), while the gold reference passage shows that the actual LLM feature in Nextcloud 30 is part of the Mail app and only requires a text-processing integration such as integrationopenai."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_ai_app_context_chat_rst_1",
+            "nextcloud_30_admin_manual_installation_system_requirements_rst_0",
+            "nextcloud_30_admin_manual_ai_app_translate2_rst_1",
+            "nextcloud_30_admin_manual_installation_system_requirements_rst_1",
+            "nextcloud_30_admin_manual_ai_app_stt_whisper2_rst_1"
+          ],
+          "answer": "**Recommended setup for LLM Processing in Nextcloud 30 (using only the provided passages):**\n\nAccording to **Passage 1 (Product: Nextcloud, Version: 30, Section: Requirements)** for the LLM-related component:\n\n- **GPU Setup**: NVIDIA GPU with at least 2GB VRAM, CUDA >= v12.2 on the host system. Nextcloud AIO is supported.\n- **CPU Setup**: At least 12GB of system RAM (recommended 8GB if the Free text-to-text provider is not on the same machine). 4+ cores for the embedding model. A dedicated machine is recommended.\n- Memory scaling: 2 GB + additional 500MB for each concurrent request made to the backend.\n- This app uses the configured free text-to-text task processing provider instead of running its own language model by default.\n\n**Server recommendations** from **Passage 2 (Product: Nextcloud, Version: 30, Section: Server)**:\n- Operating System: Ubuntu 22.04 LTS (recommended) or Ubuntu 24.04 LTS, Red Hat Enterprise Linux 9 (recommended).\n- PHP: 8.3 (recommended).\n- Database: MariaDB 10.6/10.11 (recommended) or MySQL 8.0/8.4.\n- Webserver: Apache 2.4 with mod_php or php-fpm (recommended) or nginx with php-fpm.\n\n**Additional notes from related LLM passages**:\n- **Passage 3 (Product: Nextcloud, Version: 30, Section: Requirements)** specifies for one component: NVIDIA GPU with at least 4GB VRAM, CUDA >= v12.2.2, x86 CPU with 4-8 cores, and at least 6GB RAM for the app.\n- **Passage 5 (Product: Nextcloud, Version: 30, Section: Requirements)** notes for another component: 10-20 CPU cores recommended (on a separate machine), 4GB for the app (GPU not supported in that specific variant).\n\n**General memory guidance** from **Passage 4 (Product: Nextcloud, Version: 30, Section: Memory)**: Nextcloud recommends a minimum of 512MB RAM per process (128MB minimum per process).\n\nAll information is cited exclusively from the provided Nextcloud 30 documentation passages. A dedicated machine is explicitly recommended in Passage 1 for best results.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is completely irrelevant to the user's question about LLM Processing in Nextcloud 30; it discusses hardware requirements for local LLM backends and generic server specs, while the actual gold passage for version 30 only describes optional LLM usage inside the Mail app that relies on an external integration like integration_openai."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_installation_source_installation_rst_9",
+            "nextcloud_30_admin_manual_ai_app_llm2_rst_2",
+            "nextcloud_30_admin_manual_office_configuration_rst_2",
+            "nextcloud_29_admin_manual_office_configuration_rst_2",
+            "nextcloud_28_admin_manual_office_configuration_rst_2"
+          ],
+          "answer": "**The passages provided do not contain any information about the recommended setup for LLM Processing in Nextcloud 30.**\n\nThe only passage that mentions any kind of LLM-related or AI app setup is **Passage 2 (Product: Nextcloud, Version: 30, Section: Requirements)**. It describes hardware and software requirements for an External App that depends on AppAPI v3.1.0 or higher. However, it does not mention \u201cLLM Processing\u201d at all, nor does it provide a recommended setup for LLM functionality.\n\nNo other passages (1, 3, 4, or 5) discuss LLM, AI, or related processing configuration.\n\nTherefore, based on the instruction to answer **using ONLY the provided documentation passages** and not to assume or invent information, there is no answer available for this question in the given documentation.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly determined that the provided passages lack any information on LLM Processing, but this contradicts the gold reference passage which explicitly contains the recommended setup for LLM usage in the Mail app for Nextcloud 30."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0002",
+      "query_text": "Where can I find instructions to manage Simple Storage Service (S3) in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_configuration_files_primary_storage_rst_0",
+            "nextcloud_28_admin_manual_configuration_files_primary_storage_rst_0",
+            "nextcloud_30_admin_manual_configuration_files_primary_storage_rst_0",
+            "nextcloud_29_admin_manual_configuration_files_primary_storage_rst_5",
+            "nextcloud_28_admin_manual_configuration_files_primary_storage_rst_5"
+          ],
+          "answer": "**Answer:**\n\nInstructions to manage Simple Storage Service (S3) in **Nextcloud 30** are located in the section **\"Configuring Object Storage as Primary Storage\"** (Product: Nextcloud, Version: 30).\n\nThis is the only passage provided for Nextcloud 30. No dedicated \"Simple Storage Service (S3)\" section for version 30 is available in the supplied documentation. The S3-specific configuration details (including the `\\\\OC\\\\Files\\\\ObjectStore\\\\S3` class, required parameters such as `bucket`, `key`, and `secret`, and all optional parameters) are documented for versions 28 and 29 only.",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant answer explicitly states that S3-specific configuration details (including the class, required parameters, and optional parameters) are only documented for versions 28 and 29, while claiming the instructions are for Nextcloud 30, thereby mixing version-specific guidance."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_files_primary_storage_rst_0",
+            "nextcloud_30_admin_manual_configuration_files_primary_storage_rst_5",
+            "nextcloud_30_user_manual_external_storage_external_storage_rst_0",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_26",
+            "nextcloud_30_admin_manual_index_rst_0"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions to manage Simple Storage Service (S3) in Nextcloud 30 in the following sections of the Nextcloud 30 documentation:\n\n- **Configuring Object Storage as Primary Storage** (Product: Nextcloud, Version: 30, Section: Configuring Object Storage as Primary Storage) \u2013 explains how to configure S3 or compatible implementations (e.g. Minio or Ceph Object Gateway) as primary storage.\n- **Simple Storage Service (S3)** (Product: Nextcloud, Version: 30, Section: Simple Storage Service (S3)) \u2013 provides the exact configuration syntax and parameters for the `\\\\OC\\\\Files\\\\ObjectStore\\\\S3` class, including required and optional parameters for both Amazon-hosted and non-Amazon S3 setups.\n- **Configuring External Storage** (Product: Nextcloud, Version: 30, Section: Configuring External Storage) and **Files external** (Product: Nextcloud, Version: 30, Section: Files external) \u2013 cover managing S3 when used as an *external* storage mount via the External Storage app (filesexternal), including CLI commands such as `filesexternal:create`, `filesexternal:list`, `filesexternal:config`, etc.\n\nThese are the only locations with relevant instructions in the provided Nextcloud 30 documentation.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer accurately references only Nextcloud 30 documentation sections and correctly describes the S3 configuration options and CLI commands that are valid for version 30, without introducing any parameters, syntax, or instructions from prior versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_issues_applying_patch_rst_1",
+            "nextcloud_28_admin_manual_issues_applying_patch_rst_1",
+            "nextcloud_30_admin_manual_issues_applying_patch_rst_1",
+            "nextcloud_29_admin_manual_configuration_server_occ_command_rst_25",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_25"
+          ],
+          "answer": "**I cannot provide instructions for managing S3 in Nextcloud 30.**\n\nThe provided documentation passages for Nextcloud 30 (and versions 28/29) only contain information on:\n- Getting a patch from a GitHub pull request (Passage 3).\n- Commands for handling shares (sharing:cleanup-remote-storages, sharing:expiration-notification, sharing:delete-orphan-shares) (Passage 5).\n\nNo passages mention Simple Storage Service, S3, object storage, or related management instructions. Per the guidelines, I can only use information present in the supplied passages and cannot assume or invent any additional details.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly identifies that the retrieved passages contain no S3 information but fails to provide the actual instructions available in the gold reference passage for Nextcloud 30, resulting in an unhelpful non-answer to the user's question."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0003",
+      "query_text": "How should I handle Logfiles in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_31",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_30",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_33",
+            "nextcloud_28_admin_manual_configuration_server_logging_configuration_rst_6",
+            "nextcloud_29_admin_manual_configuration_server_logging_configuration_rst_6"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30** (Passage 3, Section: log_type), the `logtype` parameter in your `config.php` determines where Nextcloud logs are sent. It defaults to `'file'`.\n\n**Supported options in Nextcloud 30:**\n\n- `'logtype' => 'file'` \u2013 Logs are written to `nextcloud.log` in the default Nextcloud data directory. The log file location can be changed using the `logfile` parameter.\n- `'logtype' => 'syslog'` \u2013 Logs are sent to the system log (requires an active syslog daemon).\n- `'logtype' => 'errorlog'` \u2013 Logs are sent to the PHP errorlog function.\n- `'logtype' => 'systemd'` \u2013 Logs are sent to the Systemd journal (requires a Systemd-based system, the Systemd journal, and the PHP `systemd` extension installed and active).\n\nThe built-in logreader app in the Administration settings \u2192 Logging interface **only accesses the file-based `nextcloud.log`** (Passage 5, Version 29 documentation; no differing Passage 30 information is provided).\n\nNo additional configuration parameters or handling instructions specific to logfiles in Nextcloud 30 are present in the supplied passages.",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant incorrectly relies on and cites Passage 5 from version 29 documentation for the logreader app behavior while claiming no differing Passage 30 information exists, and it focuses on config.php logtype parameters instead of the actual Nextcloud 30 logfile location and handling instructions given in the Gold Reference Passage."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_33",
+            "nextcloud_30_admin_manual_configuration_server_logging_configuration_rst_6",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_30",
+            "nextcloud_30_admin_manual_issues_general_troubleshooting_rst_2",
+            "nextcloud_30_admin_manual_installation_harden_server_rst_14"
+          ],
+          "answer": "**Answer:**\n\nIn Nextcloud 30, logfiles are handled primarily through the configuration parameter **'logtype'** (Version: 30, Passage 1) and the OCC commands in the **Logging commands** section (Version: 30, Passage 3).\n\n### Default Behavior (Version: 30, Passage 1 & 4)\n- The default **'logtype'** is **'file'**, which writes logs to **nextcloud.log** in the default data directory (e.g. `data/nextcloud.log`).\n- The log file location can be changed using the **'logfile'** parameter.\n- The file is also accessible via **Administration settings > Logging** in the Web UI **if** the built-in Log Reader app is enabled (Version: 30, Passage 2 and 4).\n\n### Recommended Configuration Steps (Version: 30, Passage 3)\nUse the OCC tool (run as the webserver user, e.g. `sudo -u www-data php occ`):\n\n1. Check current logging status:\n   ```\n   sudo -u www-data php occ log:file\n   ```\n   (Shows: Log backend, Log file path, and rotation settings.)\n\n2. Enable and configure the logfile backend:\n   ```\n   sudo -u www-data php occ log:file --enable --file=/path/to/nextcloud.log --rotate-size=0\n   ```\n   (Use 0 to disable rotation by size.)\n\n3. Set logging backend, level, and timezone:\n   ```\n   sudo -u www-data php occ log:manage --backend=file --level=warning --timezone=UTC\n   ```\n   Available backends (Version: 30, Passage 1 & 3): `file`, `syslog`, `errorlog`, `systemd`.\n\n### Additional Requirements (Version: 30, Passage 5)\n- Ensure **nextcloud.log** is writable by the webserver user.\n- You may need to set **'loglevel'** to **2** (or lower) in `config.php` to capture failed login attempts.\n- Define **'logfilemode'** in `config.php` if permission issues occur.\n\n### Viewing Logs (Version: 30, Passage 3)\n- `occ log:tail` \u2013 requires the **Log Reader** app to be enabled.\n- `occ log:watch` \u2013 live tail, also requires the **Log Reader** app.\n\nFor integrating the **adminaudit** app into the web interface, see Passage 2 (Version: 30). Always change **'debug'** back to `false` in `config.php` when finished troubleshooting (Version: 30, Passage 4).\n\nAll steps and parameters above are taken exclusively from the provided Nextcloud 30 documentation passages.",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant answer mixes OCC commands and parameters (log:file, log:manage, log:tail, log:watch, --rotate-size, etc.) that do not exist in Nextcloud 30 with the actual content of the provided Gold Reference Passage for version 30, which only describes standard PHP, Apache, and Nextcloud log file locations."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_30",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_33",
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_31",
+            "nextcloud_29_admin_manual_issues_general_troubleshooting_rst_2",
+            "nextcloud_28_admin_manual_issues_general_troubleshooting_rst_2"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30** (Passage 2, Section: log_type), the `logtype` parameter is configured as follows:\n\n```php\n'logtype' => 'file',\n```\n\nThis parameter determines where the Nextcloud logs are sent. The supported options in Nextcloud 30 are:\n\n- **file**: the logs are written to `nextcloud.log` in the default Nextcloud data directory. The log file can be changed with the `logfile` parameter. (This is the default.)\n- **syslog**: the logs are sent to the system log. This requires a syslog daemon to be active.\n- **errorlog**: the logs are sent to the PHP errorlog function.\n- **systemd**: the logs are sent to the Systemd journal. This requires a system that runs Systemd and the Systemd journal. The PHP extension `systemd` must be installed and active.\n\nThe Nextcloud 30 documentation does not contain a dedicated \"Nextcloud log files\" section with additional instructions (such as log location via the web UI, log levels, or debug mode). Only the `logtype` configuration from Passage 2 may be used.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly focuses on the `logtype` PHP config parameter and its options, while the gold reference passage for Nextcloud 30 is about locating and checking the actual log files (Nextcloud\u2019s nextcloud.log, Apache\u2019s error.log, and PHP\u2019s error log)."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0004",
+      "query_text": "What are the correct settings and requirements for Key type: user key in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_files_encryption_configuration_rst_7",
+            "nextcloud_29_admin_manual_configuration_files_encryption_configuration_rst_7",
+            "nextcloud_30_admin_manual_configuration_files_encryption_configuration_rst_7",
+            "nextcloud_29_admin_manual_configuration_files_encryption_details_rst_4",
+            "nextcloud_28_admin_manual_configuration_files_encryption_details_rst_4"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages do **not** contain any information about \"Key type: user key\" (or the command `./occ encryption:disable-master-key`) for **Nextcloud 30**.\n\nPassages 1\u20133 cover only `occ encryption` commands for Nextcloud 28, 29, and 30, but do not mention user-key settings or requirements.  \nPassages 4 and 5 describe Key type: user key **only for versions 29 and 28**, respectively.\n\nPer the instructions, no information not present in the passages can be assumed or invented. Therefore, the correct settings and requirements for Key type: user key in Nextcloud 30 cannot be determined from the supplied documentation.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly states that the provided passages contain no information about \"Key type: user key\" for Nextcloud 30 and refuses to fabricate details, which accurately reflects the target version's documentation status without mixing any instructions from older versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_files_encryption_configuration_rst_7",
+            "nextcloud_30_admin_manual_configuration_files_encryption_details_rst_4",
+            "nextcloud_30_admin_manual_configuration_files_encryption_details_rst_1",
+            "nextcloud_30_admin_manual_groupware_mail_rst_1",
+            "nextcloud_30_admin_manual_installation_example_openbsd_rst_4"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30**:\n\n### Requirements for Key type: user key\n- User key encryption **needs to be explicitly activated** by calling:  \n  `./occ encryption:disable-master-key`  \n  (Passage 2, Product: Nextcloud, Version: 30, Section: Key type: user key)\n\n- In older versions of Nextcloud this had been enabled by default. In **Nextcloud 30** it is **not** enabled by default. (Passage 2)\n\n### Settings / Characteristics (Nextcloud 30)\n- All users have their own user keys that are used to secure the files handled by Nextcloud. (Passage 2)\n- The user keys are protected by the user passwords. (Passage 2)\n- The server administrator is **not** able to decrypt user files without knowing any user password (unless the file is publicly shared or a recovery key is defined). (Passage 2)\n- Files are **permanently lost** if users forget their passwords (unless the files are publicly shared or a recovery key is defined). (Passage 2)\n- **Cannot be used** with SAML authentication, because Nextcloud does not receive any user credentials and therefore cannot use the users' passwords for encryption. (Passage 2)\n\n**Note:** Master key encryption is the default mode in Nextcloud 30 (Passage 3). User key encryption must be deliberately switched on using the occ command above.\n\nNo other configuration settings (such as storage paths or additional parameters) are mentioned for user-key mode in the supplied passages.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant accurately extracts and presents only the requirements and characteristics for user-key encryption specifically from the Nextcloud 30 documentation, clearly notes that it is not enabled by default in version 30, and explicitly distinguishes it from older versions without mixing any conflicting commands or settings."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_configuration_server_security_setup_warnings_rst_2",
+            "nextcloud_28_admin_manual_configuration_server_security_setup_warnings_rst_2",
+            "nextcloud_30_admin_manual_configuration_server_security_setup_warnings_rst_2",
+            "nextcloud_29_admin_manual_configuration_server_bruteforce_configuration_rst_5",
+            "nextcloud_30_admin_manual_configuration_server_bruteforce_configuration_rst_5"
+          ],
+          "answer": "**I cannot provide an answer.**\n\nThe provided documentation passages for Nextcloud 30 (and related versions) contain **no information** about \"Key type: user key\", its settings, or its requirements. Per the instructions, I must answer using **ONLY** the provided passages and cannot assume or invent any additional information.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly refused to answer due to lack of relevant information in the provided passages, but this still constitutes a failure to answer the user's question about the correct settings and requirements."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0005",
+      "query_text": "In version 30 of Nextcloud, what is the procedure for Create a group?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_configuration_server_occ_command_rst_41",
+            "nextcloud_28_admin_manual_configuration_server_occ_command_rst_39",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_41",
+            "nextcloud_29_admin_manual_configuration_user_instruction_set_for_groups_rst_0",
+            "nextcloud_28_admin_manual_configuration_user_instruction_set_for_groups_rst_0"
+          ],
+          "answer": "**Answer:**\n\nIn Nextcloud **30**, you can create a group using the OCC command-line tool as described in the Group commands section.\n\n**Procedure:**\n\nUse the `group:add` command with the following syntax:\n\n```bash\nsudo -u www-data php occ group:add [gid]\n```\n\n**Example:**\n\nTo create a new group named \"beer\":\n\n```bash\nsudo -u www-data php occ group:add beer\n```\n\n*(Citation: Passage 3 - Product: Nextcloud, Version: 30, Section: Group commands)*",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly recommends using the OCC `group:add` command, while the gold reference passage for Nextcloud 30 clearly describes using the OCS API endpoint (ocs/v1.php/cloud/groups with POST and groupid parameter)."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_41",
+            "nextcloud_30_admin_manual_configuration_user_instruction_set_for_groups_rst_0",
+            "nextcloud_30_admin_manual_configuration_user_user_auth_ldap_rst_5",
+            "nextcloud_30_user_manual_groupware_index_rst_0",
+            "nextcloud_30_admin_manual_configuration_user_instruction_set_for_users_rst_0"
+          ],
+          "answer": "**Answer:**\n\nAccording to Passage 1 (Product: Nextcloud, Version: 30, Section: Group commands), the procedure to create a group in Nextcloud 30 is to use the **group:add** command.\n\n**Command syntax:**  \n`group:add [gid]`\n\n**Example:**  \n`sudo -u www-data php occ group:add beer`\n\nThis creates a new group with the group ID (gid) \"beer\", which corresponds to the group name entered when clicking \"Add group\" on the Users page in the Nextcloud Web UI.\n\nNo other passages contain instructions for creating a group.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly provides an OCC command-line instruction for creating a group, while the gold reference passage for Nextcloud 30 specifies using the OCS API (POST to ocs/v1.php/cloud/groups with the groupid parameter)."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_server_bruteforce_configuration_rst_5",
+            "nextcloud_29_admin_manual_configuration_server_bruteforce_configuration_rst_5",
+            "nextcloud_30_admin_manual_configuration_server_bruteforce_configuration_rst_5",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_45",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_21"
+          ],
+          "answer": "**I cannot provide a procedure for \"Create a group\" in Nextcloud 30.**\n\nThe provided documentation passages for Nextcloud version 30 only cover:\n- Brute force protection and load balancers/reverse proxies (Passage 3)\n- The `sort_groups_by_name` configuration option (Passage 4)\n\nNone of the passages contain any instructions, steps, parameters, or procedures related to creating a group. Per the instructions, I can only use information present in the supplied passages and cannot assume or invent any additional details.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly determined that the supplied passages contain no information about creating a group in Nextcloud 30 and therefore refused to provide any procedure, which is the appropriate action per the given instructions."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0006",
+      "query_text": "In Nextcloud 30, how do I configure trashbin_retention_obligation?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_23",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_22",
+            "nextcloud_29_admin_manual_configuration_files_trashbin_configuration_rst_0",
+            "nextcloud_28_admin_manual_configuration_files_trashbin_configuration_rst_0",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_25"
+          ],
+          "answer": "**Answer:**\n\nIn Nextcloud 30, configure the `trashbin_retentionobligation` setting in `config.php` using the following format (Passage 5):\n\n```php\n'trashbin_retentionobligation' => 'auto',\n```\n\nAccording to Passage 5 (Product: Nextcloud, Version: 30, Section: trashbin_retention_obligation), the default value is `'auto'`. This keeps files and folders in the trash bin for 30 days and automatically deletes them anytime after that if space is needed (files may not be deleted if space is not needed).\n\nPassage 5 further states that the setting supports two configurable parameters for minimum and maximum retention (D1 and D2). It also notes that if the user quota limit is exceeded due to deleted files in the trash bin, retention settings will be ignored and files will be cleaned up until the quota requirements are met. \n\nOnly the information explicitly present in Passage 5 for Nextcloud 30 was used.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly references only Passage 5 for Nextcloud 30, uses the proper parameter name and default value for that version, and accurately summarizes the retention behavior and quota behavior without introducing any information from prior versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_25",
+            "nextcloud_30_user_manual_files_deleted_file_management_rst_2",
+            "nextcloud_30_admin_manual_configuration_files_trashbin_configuration_rst_0",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_27",
+            "nextcloud_30_admin_manual_groupware_calendar_rst_9"
+          ],
+          "answer": "**Answer:**\n\nIn Nextcloud 30, you configure `trashbin_retention_obligation` in the `config.php` file.\n\nAccording to Passage 1 (Product: Nextcloud, Version: 30, Section: trashbin_retention_obligation), Passage 2 (Product: Nextcloud, Version: 30, Section: How the deleted files app manages storage space), and Passage 3 (Product: Nextcloud, Version: 30, Section: Deleted Items (trash bin)), the parameter is set as follows:\n\n```php\n'trashbin_retentionobligation' => 'auto',\n```\n\n**Available values (Nextcloud 30):**\n\n- `'auto'` \u2013 default setting. Keeps files and folders in the trash bin for 30 days and automatically deletes anytime after that if space is needed (files may not be deleted if space is not needed). (Passage 1, Passage 2, Passage 3)\n- `'D, auto'` \u2013 keeps files for D+ days, deletes anytime if space is needed. (Passage 3)\n- `'auto, D'` \u2013 deletes all files older than D days automatically, other files anytime if space needed. (Passage 3)\n- `'D1, D2'` \u2013 keeps files for at least D1 days and deletes when they exceed D2 days. (Passage 1, Passage 3)\n- `'disabled'` \u2013 trash bin auto clean disabled; files kept forever. (Passage 3)\n\nPassage 2 (Nextcloud 30) additionally notes that the Deleted Files app allocates a maximum of 50% of currently available free space to deleted files and that Nextcloud checks and cleans up every time new files are added.\n\nThis is the only method and only configuration values documented for Nextcloud 30.",
+          "judge_category": "wrong",
+          "judge_reason": "**CATEGORY:** version_correct  \n**REASON:** The assistant answer exclusively uses documentation and values explicitly labeled for Nextcloud 30, correctly lists all documented options for trashbin_retentionobligation without introducing parameters or behavior from older versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_25",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_26",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_80",
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_72",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_73"
+          ],
+          "answer": "**Answer:**\n\nIn Nextcloud 30, you configure `trashbin_retention_obligation` in the `config.php` file using the following format and values (Passage 1 & Passage 2, Product: Nextcloud, Version: 30, Section: trashbin_retention_obligation):\n\n```php\n'trashbin_retention_obligation' => 'auto',\n```\n\n**Available values (Nextcloud 30):**\n\n- `'auto'` \u2013 default setting. Keeps files and folders in the trash bin for 30 days and automatically deletes anytime after that if space is needed (files may not be deleted if space is not needed). (Passage 1 & Passage 2, Product: Nextcloud, Version: 30)\n- `'D1, auto'` \u2013 keeps files and folders in the trash bin for D1+ days, delete anytime if space needed (files may not be deleted if space is not needed). (Passage 2, Product: Nextcloud, Version: 30)\n- `'auto, D2'` \u2013 delete all files in the trash bin that are older than D2 days automatically, delete other files anytime if space needed. (Passage 2, Product: Nextcloud, Version: 30)\n- `'D1, D2'` \u2013 keep files and folders in the trash bin for at least D1 days and delete when exceeds D2 days (files will not be deleted automatically if space is needed). (Passage 2, Product: Nextcloud, Version: 30)\n- `'disabled'` \u2013 trash bin auto clean disabled, files and folders will be kept forever. (Passage 2, Product: Nextcloud, Version: 30)\n\nDefaults to `auto` (Passage 2, Product: Nextcloud, Version: 30).\n\nNote: If the user quota limit is exceeded due to deleted files in the trash bin, retention settings will be ignored and files will be cleaned up until the quota requirements are met (Passage 1, Product: Nextcloud, Version: 30).",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant answer mixes configuration syntax and values from different versions by using the correct Nextcloud 30 parameter name 'trashbin_retention_obligation' while copying descriptions and value formats (especially the \"D1, auto\", \"auto, D2\", and \"D1, D2\" variants) that belong to the older 'trashbin_retention_obligation' syntax used in previous versions."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0007",
+      "query_text": "What is the recommended setup for How can I find out if a created user can access a database? in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_database_linux_database_configuration_rst_4",
+            "nextcloud_29_admin_manual_configuration_database_linux_database_configuration_rst_5",
+            "nextcloud_30_admin_manual_configuration_database_linux_database_configuration_rst_5",
+            "nextcloud_29_admin_manual_installation_installation_wizard_rst_2",
+            "nextcloud_28_admin_manual_installation_installation_wizard_rst_2"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages for Nextcloud 30 (Passage 3) do not contain any information about how to find out if a created user can access a database, nor do they mention a \"recommended setup\" for this task.\n\nPassage 3 only covers the SQL commands to create the database and grant privileges, and the resulting entries in `config/config.php` (such as `\"dbtype\" => \"mysql\"`, `\"dbname\" => \"nextcloud\"`, `\"dbuser\" => \"username\"`, `\"dbhost\" => \"localhost\"`, and `\"mysql.utf8mb4\" => true` for UTF8MB4).\n\nNo other passages for version 30 address user verification methods.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer incorrectly claims that the documentation contains no information on the topic, while the gold reference passage for Nextcloud 30 directly provides the recommended CLI-based methods (mysql/psql commands) to test database user access."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_database_linux_database_configuration_rst_5",
+            "nextcloud_30_admin_manual_installation_installation_wizard_rst_2",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_40",
+            "nextcloud_30_admin_manual_configuration_database_linux_database_configuration_rst_0",
+            "nextcloud_30_admin_manual_configuration_user_instruction_set_for_users_rst_1"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30**, there is no information about how to find out if a created user can access a database, nor is there any recommended setup specifically for this purpose.\n\nThe passages only describe:\n- Creating a database and granting privileges during initial setup (Passage 1, Nextcloud 30, Configuring a MySQL or MariaDB database).\n- The installation wizard automatically creating a limited-privilege database user (Passage 2, Nextcloud 30, Database choice).\n- Supported databases and general database configuration (Passage 4, Nextcloud 30, Database configuration).\n- Commands for retrieving **Nextcloud user account** information (Passage 3, Nextcloud 30, user:info) and searching for **Nextcloud users** via the OCS API (Passage 5, Nextcloud 30, Search/get users).\n\nNo documentation is provided in the passages regarding checking database-level permissions for a created user (e.g., via SQL queries like `SHOW GRANTS FOR 'user'@'host';`). Therefore, no answer can be given based solely on the supplied passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly concludes there is no information in the passages and fails to provide the recommended setup for testing database access that is explicitly present in the gold reference passage for Nextcloud 30."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_4_2_ref_settings_txt_78",
+            "django_5_1_ref_settings_txt_73",
+            "django_5_0_ref_settings_txt_72",
+            "nextcloud_29_admin_manual_configuration_database_splitting_rst_0",
+            "nextcloud_28_admin_manual_configuration_database_splitting_rst_0"
+          ],
+          "answer": "**I cannot provide an answer.**\n\nThe provided documentation passages do **not** contain any information about Nextcloud 30, nor do they contain any content related to \u201cfinding out if a created user can access a database\u201d (or any user/database permission checking procedures).\n\nAll available passages cover only:\n- Django 4.2, 5.0, and 5.1 \u2013 AUTH_USER_MODEL setting\n- Nextcloud 28 and 29 \u2013 splitting databases (activity table)\n\nPer the instructions, I must answer using **ONLY** the provided documentation passages and must cite the exact product version present in those passages. Since no matching information exists for Nextcloud 30 or the requested topic, no valid answer can be given.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant refused to provide any answer despite the existence of a relevant gold reference passage specifically for Nextcloud 30, making the response incorrect and unhelpful for the target version."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0008",
+      "query_text": "Where can I find instructions to manage Web server and PHP modules in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_installation_source_installation_rst_8",
+            "nextcloud_29_admin_manual_configuration_server_occ_command_rst_43",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_43",
+            "nextcloud_28_admin_manual_configuration_server_occ_command_rst_41",
+            "nextcloud_29_admin_manual_installation_source_installation_rst_2"
+          ],
+          "answer": "**Answer:**\n\nInstructions for managing PHP modules in Nextcloud 30 can be found in the **Prerequisites for manual installation** section. According to Passage 5 (Product: Nextcloud, Version: 29, Section: Prerequisites for manual installation), the Nextcloud .tar archive contains all of the required PHP modules, and your Linux distribution should have packages for all required modules. See the phpconfiguration section for a list of required and suggested modules.\n\nNo instructions for managing Web server modules (such as disabling mod_webdav) specific to Nextcloud 30 are provided in the given passages. Passage 5 (Version 29) notes that you don\u2019t need the WebDAV module for your web server, as Nextcloud has a built-in WebDAV server (SabreDAV), and if modwebdav is enabled it must be disabled. Passage 1 (Product: Nextcloud, Version: 30, Section: Overview) discusses PHP-FPM configuration but does not cover module management.\n\nFor Nextcloud 30 specifically, refer to the phpconfiguration documentation referenced in the prerequisites guidance.",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant primarily cites and relies on Passage 5 for version 29 (including the phpconfiguration reference and the mod_webdav note) while only superficially acknowledging version 30, resulting in mixed-version guidance instead of using the target version 30 gold reference about problematic Web server and PHP modules."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_installation_source_installation_rst_8",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_43",
+            "nextcloud_30_admin_manual_installation_source_installation_rst_2",
+            "nextcloud_30_admin_manual_installation_source_installation_rst_13",
+            "nextcloud_30_admin_manual_installation_example_ubuntu_rst_0"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions to manage Web server and PHP modules for Nextcloud 30 in the **Prerequisites for manual installation** section (Product: Nextcloud, Version: 30).\n\nThis passage states: \"The Nextcloud .tar archive contains all of the required PHP modules. Your Linux distribution should have packages for all required modules. See phpconfiguration for a list of required and suggested modules. You don\u2019t need the WebDAV module for your Web server (i.e. Apache\u2019s modwebdav), as Nextcloud has a built-in WebDAV server of its own, SabreDAV. If modwebdav is enabled you must disable it for Nextcloud.\"\n\nFor a practical example of installing the required and recommended PHP and Apache modules on Ubuntu 22.04 LTS for Nextcloud 30, refer to **Example installation on Ubuntu 22.04 LTS** (Product: Nextcloud, Version: 30), which provides the exact apt command:\n\n`sudo apt install apache2 mariadb-server libapache2-mod-php php-gd php-mysql \\ php-curl php-mbstring php-intl php-gmp php-bcmath php-xml php-imagick php-zip`\n\nAdditional details on PHP-FPM configuration (an advanced topic for busy sites) are available in the **Overview** section (Product: Nextcloud, Version: 30).",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly references only Nextcloud 30 documentation, provides the appropriate module installation command for version 30, and avoids any commands, modules, or instructions from older versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_0",
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_0",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_0",
+            "nextcloud_29_admin_manual_issues_general_troubleshooting_rst_3",
+            "nextcloud_28_admin_manual_issues_general_troubleshooting_rst_3"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages do **not** contain any instructions on how to manage Web server and PHP modules in Nextcloud 30.\n\nPassage 1 (Product: Nextcloud, Version: 30, Section: Configuration Parameters) only covers editing the `config/config.php` file and references `config/config.sample.php`. It does not mention Web server modules or PHP modules.\n\nPassages 4 and 5 discuss viewing PHP version and configuration information using `phpinfo()` (for Versions 29 and 28), but they do not provide instructions for managing or configuring Web server or PHP modules. No equivalent Passage exists for Version 30 regarding PHP or Web server module management.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly states that the documentation contains no instructions, while the gold reference passage for exactly version 30 provides relevant information about incompatible Web server and PHP modules."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0009",
+      "query_text": "How should I handle Directory settings in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_apps_management_rst_4",
+            "nextcloud_28_admin_manual_apps_management_rst_3",
+            "nextcloud_30_admin_manual_apps_management_rst_4",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_35",
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_36"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Nextcloud 30** (Passage 3, Section: Using custom app directories), you should handle directory settings by using the **appspaths** array in **config.php**.\n\nFor every instruction and parameter, the exact version is **Nextcloud 30**:\n\n- Use the **appspaths** array in **config.php**.\n- The key **path** defines the absolute file system path to the app folder.\n- The key **url** defines the HTTP web path to that folder, starting at the Nextcloud web root.\n- The key **writable** indicates if a user can install apps in that folder.\n\nExample configuration (Nextcloud 30):\n\n```php\n'appspaths' => [\n    [\n        'path'     => OC::$SERVERROOT . \"/apps\",\n        'url'      => \"/apps\",\n        'writable' => false,\n    ],\n    [\n        'path'     => OC::$SERVERROOT . \"/extra-apps\",\n        'url'      => \"/extra-apps\",\n        'writable' => true,\n    ],\n],\n```\n\nAdditional rules from **Nextcloud 30** (Passage 3):\n- Make sure that the values you choose for **path** and **url** for any custom apps directories do not conflict with directories which already exist in your Nextcloud Server root.\n- Apps paths can be located outside the server root. However, for any path outside the server root, you need to create a symbolic link in the server root that points **url** to **path** using: `ln -sf /var/local/lib/nextcloud/extra-apps ./extra-apps`\n\nThis is the only information available for directory settings in Nextcloud 30.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant's answer is completely irrelevant to the gold reference passage provided for Nextcloud 30, which is about LDAP directory service configuration (base trees, group search attributes, member associations, nested groups, etc.), not about custom app directories or the appspaths array."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_apps_management_rst_4",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_38",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_62",
+            "nextcloud_30_admin_manual_installation_installation_wizard_rst_1",
+            "nextcloud_30_admin_manual_issues_general_troubleshooting_rst_4"
+          ],
+          "answer": "**Answer:**\n\nIn Nextcloud 30, Directory settings are handled exclusively through the `config.php` file using the parameters documented for version 30.\n\n**Custom Apps Directories (apps_paths):**\nUse the `'appspaths'` array (Passage 2, Product: Nextcloud, Version: 30, Section: apps_paths) to define the location of the Apps directory:\n\n```php\n'appspaths' => [\n    [\n        'path'     => '/var/www/nextcloud/apps',\n        'url'      => '/apps',\n        'writable' => true,\n    ],\n],\n```\n\nAlternatively, follow the example in Passage 1 (Product: Nextcloud, Version: 30, Section: Using custom app directories) to keep the default `/apps/` folder read-only and use a writable `/extra-apps/` folder:\n\n```php\n\"appspaths\" => [\n    [\n        \"path\"     => OC::$SERVERROOT . \"/apps\",\n        \"url\"      => \"/apps\",\n        \"writable\" => false,\n    ],\n    [\n        \"path\"     => OC::$SERVERROOT . \"/extra-apps\",\n        \"url\"      => \"/extra-apps\",\n        \"writable\" => true,\n    ],\n],\n```\n\nFor any custom apps path located outside the server root, create a symbolic link (Passage 1, Product: Nextcloud, Version: 30, Section: Using custom app directories).\n\n**Update Directory:**\nUse the `'updatedirectory'` parameter (Passage 3, Product: Nextcloud, Version: 30, Section: updatedirectory) to override the location where update files are stored. It must be located outside the Nextcloud installation directory and be writable by the web server user. It defaults to the datadirectory if not set.\n\n**Data Directory:**\nConfigure the data directory location during installation (Passage 4, Product: Nextcloud, Version: 30, Section: Data directory location). It should be placed outside the web root (e.g. `/opt/nextcloud/`). The directory must already exist and be owned by the HTTP user. It is difficult to move after installation.\n\nThe data directory must never be modified manually (Passage 5, Product: Nextcloud, Version: 30, Section: Debugging sync issues). Use WebDAV for direct file uploads instead.\n\nAll of the above configurations and restrictions are specific to Nextcloud 30 as stated in the provided passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is completely irrelevant to the user's question about \"Directory settings\" in Nextcloud 30; it discusses apps_paths, updatedirectory, and data directory configuration, while the provided gold reference passage is about LDAP directory service settings (base trees, group search attributes, member associations, nested groups, etc.)."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_22",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_21",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_24",
+            "nextcloud_29_admin_manual_configuration_files_external_storage_smb_rst_4",
+            "nextcloud_30_admin_manual_configuration_files_external_storage_smb_rst_4"
+          ],
+          "answer": "**I cannot provide an answer to this query.**\n\nThe provided documentation passages for Nextcloud 30 only cover the 'proxy' configuration option (Passage 3) and the \"Hidden files upload failure or not shown\" issue regarding the `hide dot files` setting (Passage 5). There is no information present about \"Directory settings\" in any of the supplied passages for version 30 (or any other version).\n\nPer the instructions, I must answer using **ONLY** the provided documentation passages and cannot assume or invent any additional information. No relevant details on Directory settings exist in the given passages, so no supported answer can be given.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly refuses to answer because no relevant information on \"Directory settings\" exists in the provided passages for Nextcloud 30, strictly adhering to the constraint of only using supplied documentation for the target version."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0010",
+      "query_text": "What are the correct settings and requirements for Requirements in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_ai_app_translate2_rst_1",
+            "nextcloud_30_admin_manual_ai_app_context_chat_rst_1",
+            "nextcloud_29_admin_manual_installation_system_requirements_rst_0",
+            "nextcloud_30_admin_manual_installation_system_requirements_rst_0",
+            "nextcloud_28_admin_manual_installation_system_requirements_rst_0"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30**:\n\n### From Passage 1 (Product: Nextcloud, Version: 30, Section: Requirements):\n- **Minimal Nextcloud version**: 30\n- Depends on **AppAPI v3.1.0** or higher (as this app is built as an External App)\n- **Nextcloud AIO** is supported\n- Supports **NVIDIA GPUs** and **x86-64 CPUs**\n- **CUDA** >= v12.2.2 on your host system\n- **GPU Sizing**: NVIDIA GPU with at least **4 GB VRAM**\n- **System RAM**: At least **6 GB**\n- **CPU Sizing**: x86 CPU with **4-8 cores** (more cores = faster)\n- At least **6 GB of RAM** for the app (includes software + libraries and the model)\n\n### From Passage 2 (Product: Nextcloud, Version: 30, Section: Requirements):\n- **Minimal Nextcloud version**: 30\n- **Nextcloud AIO** is supported\n- Supports **NVIDIA GPUs** and **x86-64 CPUs**\n- **CUDA** >= v12.2 on your host system\n- **GPU Setup Sizing**: NVIDIA GPU with at least **2 GB VRAM** (Free text-to-text providers requirements must be checked separately)\n- **System RAM**: At least **8 GB** (2 GB + additional 500 MB for each concurrent request if configuration parameters are changed)\n- **CPU Setup Sizing**: At least **12 GB of system RAM** if the Free text-to-text provider is not on the same machine (8 GB recommended for default settings in that case)\n- Uses the configured **free text-to-text task processing provider** by default (does not run its own language model)\n- Requires **4+ cores** for the embedding model only (backend configuration changes needed to utilize extra cores \u2014 see Configuration Options)\n\n### From Passage 4 (Product: Nextcloud, Version: 30, Section: Server):\n**Server recommendations for Nextcloud 30**:\n- **Operating System (64-bit)**: Ubuntu 24.04 LTS, **Ubuntu 22.04 LTS (recommended)**, Red Hat Enterprise Linux 9 (recommended), Red Hat Enterprise Linux 8, Debian 12 (Bookworm), SUSE Linux Enterprise Server 15, openSUSE Leap 15.5, CentOS Stream\n- **Database**: MySQL 8.0 / 8.4 or **MariaDB 10.6/10.11 (recommended)/11.4**, Oracle Database 11g/18/21/23 (enterprise only), PostgreSQL 12/13/14/15/16, SQLite 3.16+ (testing/minimal only)\n- **Webserver**: **Apache 2.4 with mod_php or php-fpm (recommended)**, nginx with php-fpm\n- **PHP Runtime**: 8.1 (deprecated), 8.2, **8.3 (recommended)**\n\nAll information is taken directly from the provided passages for **Nextcloud Version 30**. No external assumptions have been made.",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant mixes conflicting hardware requirements (e.g. 4GB VRAM / 6GB RAM from one passage, 2GB VRAM / 8GB RAM from another, and 8GB VRAM / 12GB RAM from the gold reference) that belong to different versions or configurations of the app in Nextcloud 30."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_ai_app_translate2_rst_1",
+            "nextcloud_30_admin_manual_ai_app_context_chat_rst_1",
+            "nextcloud_30_admin_manual_installation_system_requirements_rst_0",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_66",
+            "nextcloud_30_admin_manual_issues_general_troubleshooting_rst_0"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30**:\n\n### From Passage 1 (Product: Nextcloud, Version: 30, Section: Requirements):\n- **Minimal Nextcloud version**: 30\n- Depends on **AppAPI v3.1.0** or higher (as this app is built as an External App)\n- **Nextcloud AIO** is supported\n- Supports **NVIDIA GPUs** and **x86-64 CPUs**\n- **CUDA** >= v12.2.2 on your host system\n- **GPU Sizing**: NVIDIA GPU with at least **4 GB VRAM**\n- **System RAM**: At least **6 GB**\n- **CPU Sizing**: x86 CPU with **4-8 cores** (more cores = faster)\n- At least **6 GB of RAM** for the app (includes software + libraries and the model)\n\n### From Passage 2 (Product: Nextcloud, Version: 30, Section: Requirements):\n- **Minimal Nextcloud version**: 30\n- **Nextcloud AIO** is supported\n- Supports **NVIDIA GPUs** and **x86-64 CPUs**\n- **CUDA** >= v12.2 on your host system\n- **GPU Setup Sizing**: NVIDIA GPU with at least **2 GB VRAM**\n- At least **8 GB of system RAM** (2 GB + additional 500 MB for each concurrent request if configuration parameters are changed)\n- **CPU Setup Sizing**: At least **12 GB of system RAM** (2 GB + additional 500 MB for each request if the Free text-to-text provider is not on the same machine; 8 GB recommended for default settings on dedicated machine)\n- Requires **4+ cores** for the embedding model only (by default)\n- This app uses a configured free text-to-text task processing provider instead of running its own language model by default.\n\n**Note**: The two passages provide slightly different hardware sizing recommendations depending on the specific app/context being installed. Always refer to the exact app's documentation for the version of Nextcloud 30 you are using.\n\nFor general Nextcloud 30 server requirements (OS, Database, Webserver, PHP), see Passage 3.",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant mixes conflicting hardware requirements (e.g. 4GB VRAM / 6GB RAM from one passage vs 2GB VRAM / 8-12GB RAM from another, and differing core counts) that do not match the gold reference for Nextcloud 30, which specifies 8GB VRAM and 12GB system RAM with 10-20 cores recommended."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_office_configuration_rst_2",
+            "nextcloud_29_admin_manual_office_configuration_rst_2",
+            "nextcloud_30_admin_manual_office_configuration_rst_2",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_29",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_32"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Nextcloud 30**:\n\n### WOPI Settings (Passage 3 - Product: Nextcloud, Version: 30, Section: Wopi settings):\nIt is highly recommended to restrict WOPI requests to the IP addresses of the Collabora servers that are expected to request files from the Nextcloud installation. This can be done by setting the **Allow list for WOPI requests** option from the Office admin settings. Similarly, it is advised to configure Collabora's WOPI host configuration to only serve IPs from expected hosts.\n\n### config_is_readonly (Passage 5 - Product: Nextcloud, Version: 30, Section: config_is_read_only):\n```php\n'config_is_readonly' => false,\n```\nIn certain environments it is desired to have a read-only configuration file. When this switch is set to **true**, writing to the config file will be forbidden. Therefore, it will not be possible to configure all options via the Web interface. Furthermore, when updating Nextcloud it is required to make the configuration file writable again and to set this switch to **false** for the update process. Defaults to **false**.\n\nThese are the only settings and requirements explicitly documented for Nextcloud 30 in the provided passages. No other requirements are mentioned.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is completely irrelevant to the gold reference passage for Nextcloud 30, which is about hardware/system requirements and dependencies for an AI-related External App (AppAPI, NVIDIA GPU, CUDA, RAM/CPU sizing); instead it discusses unrelated WOPI/Collabora and config_is_readonly settings."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0011",
+      "query_text": "In version 30 of Nextcloud, what is the procedure for Migrating from ownCloud?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_maintenance_migrating_owncloud_rst_0",
+            "nextcloud_28_admin_manual_maintenance_migrating_owncloud_rst_0",
+            "nextcloud_29_admin_manual_maintenance_migrating_owncloud_rst_0",
+            "nextcloud_28_admin_manual_maintenance_migrating_rst_1",
+            "nextcloud_30_admin_manual_maintenance_migrating_rst_1"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Nextcloud 30** (Passage 1, Section: Migrating from ownCloud), the procedure is as follows:\n\nEspecially when migrating from ownCloud to Nextcloud you should create a backup of the config, database and the data directory, in case something goes wrong. (Nextcloud 30)\n\nCurrently migrating from ownCloud is like performing a manual update. It only works with versions that are close enough database and code-wise. The supported migration path is:  \n**ownCloud 10.13.x \u2192 Nextcloud 25.0.x (but at least 25.0.13)** (Nextcloud 30)\n\nSince ownCloud does not support PHP 8.0 or higher, you must migrate from ownCloud 10.13.x to Nextcloud 25 first and then upgrade further. (Nextcloud 30)\n\nThe detailed steps are:\n\n1. First download the correct version of Nextcloud from the older releases page. (Nextcloud 30)\n2. Make sure to do a backup before migrating. (Nextcloud 30)\n3. Follow the upgrade instructions described in the manual upgrade manual. (Nextcloud 30)\n4. When migrating to Nextcloud 20.0 or later, run the following commands after `occ upgrade`:  \n   `occ db:convert-filecache-bigint`  \n   `occ db:add-missing-columns`  \n   `occ db:add-missing-indices`  \n   `occ db:add-missing-primary-keys` (Nextcloud 30)\n5. If system cron was used, verify if the crontab entry was using `occ system:cron`. If yes, adjust it to use the php command instead according to the background jobs configuration documentation. (Nextcloud 30)\n6. Use the Nextcloud built-in updater to update your instance to the newest version. (Nextcloud 30)\n7. Verify the \"Security & setup warnings\" in the \"Overview\" section on the settings page. (Nextcloud 30)\n8. In some cases, apps installed from the ownCloud Market might have been disabled as incompatible (e.g. calendar and contacts). Re-enable the Nextcloud versions using:  \n   `occ app:enable calendar`  \n   `occ app:enable contacts` etc. (Nextcloud 30)\n\nAll instructions above are taken exclusively from the Nextcloud 30 documentation (Passage 1).",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer accurately reflects the migration procedure exactly as described in the Gold Reference Passage for Nextcloud 30, without introducing any steps, commands, or details from other versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_maintenance_migrating_owncloud_rst_0",
+            "nextcloud_30_admin_manual_maintenance_migrating_rst_1",
+            "nextcloud_30_admin_manual_maintenance_package_upgrade_rst_3",
+            "nextcloud_30_admin_manual_installation_example_openbsd_rst_4",
+            "nextcloud_30_admin_manual_maintenance_manual_upgrade_rst_1"
+          ],
+          "answer": "**Answer:**\n\nAccording to **Nextcloud 30** (Passage 1, Section: Migrating from ownCloud), migrating from ownCloud is performed like a manual upgrade. It is only supported for versions that are close enough database and code-wise. The only supported migration path is:\n\n- **ownCloud 10.13.x** \u2192 **Nextcloud 25.0.x (but at least 25.0.13)**\n\nBecause ownCloud does not support PHP 8.0 or higher, you must first migrate to Nextcloud 25, then upgrade further to reach version 30.\n\nThe exact procedure in **Nextcloud 30** is:\n\n1. Download the correct version of Nextcloud (Nextcloud 25.0.x, at least 25.0.13) from the older releases page.\n2. Make sure to create a backup of the config, database, and data directory before migrating.\n3. Follow the upgrade instructions described in the manual upgrade section.\n4. When migrating to Nextcloud 20.0 or later, run the following commands **after** `occ upgrade`:\n   - `occ db:convert-filecache-bigint`\n   - `occ db:add-missing-columns`\n   - `occ db:add-missing-indices`\n   - `occ db:add-missing-primary-keys`\n5. If a system cron was used, verify if the crontab entry used `occ system:cron`. If so, adjust it to use the php command instead (see background jobs configuration documentation).\n6. Use the Nextcloud built-in updater to update your instance from Nextcloud 25 up to the newest version (30).\n7. Verify the \"Security & setup warnings\" in the \"Overview\" section on the settings page.\n8. In some cases, apps from the ownCloud Market (e.g. calendar, contacts) may be disabled. Re-enable the Nextcloud versions using commands such as:\n   - `occ app:enable calendar`\n   - `occ app:enable contacts`\n   - etc.\n\nAll steps above are taken directly from **Nextcloud Version 30**, Passage 1. No other migration paths from ownCloud are documented as supported in this version.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer accurately reflects the content and steps from the provided Gold Reference Passage for Nextcloud 30, without introducing instructions from other versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_maintenance_migrating_owncloud_rst_0",
+            "nextcloud_30_admin_manual_maintenance_update_rst_0",
+            "nextcloud_29_admin_manual_maintenance_update_rst_0",
+            "nextcloud_28_admin_manual_maintenance_update_rst_0",
+            "nextcloud_28_admin_manual_maintenance_migrating_owncloud_rst_0"
+          ],
+          "answer": "**Answer:**\n\nAccording to **Nextcloud 30** (Passage 1, Section: Migrating from ownCloud), the procedure for migrating from ownCloud is as follows:\n\nEspecially when migrating from ownCloud to Nextcloud you should create a backup of the config, database and the data directory, in case something goes wrong. Currently migrating from ownCloud is like performing a manual update.\n\nThe supported migration path in **Nextcloud 30** is:\n\n| ownCloud    | Nextcloud                          |\n|-------------|------------------------------------|\n| 10.13.x     | 25.0.x (but at least 25.0.13)      |\n\nSince ownCloud does not support PHP 8.0 or higher, you must migrate from ownCloud 10.13.x to **Nextcloud 25.0.13+** first, then upgrade further to **Nextcloud 30**.\n\nThe detailed steps (all for **Nextcloud 30**) are:\n\n1. First download the correct version of Nextcloud from our older releases page.\n2. Make sure to do a backup before migrating.\n3. Follow the upgrade instructions described in the manual upgrade manual.\n4. When migrating to Nextcloud 20.0 or later, you will also need to run the following commands after `occ upgrade`:\n   - `occ db:convert-filecache-bigint`\n   - `occ db:add-missing-columns`\n   - `occ db:add-missing-indices`\n   - `occ db:add-missing-primary-keys`\n5. If system cron was used, please verify if the crontab entry was using the command `occ system:cron`. If yes, please adjust it to use the php command instead according to the background jobs configuration documentation.\n6. Use the Nextcloud built-in updater to update your instance to the newest version.\n7. Make sure to also verify the \"Security & setup warnings\" in the \"Overview\" section on the settings page.\n8. In some cases, apps installed from the ownCloud Market might have been disabled as incompatible (ex: calendar and contacts), so you should reinstall the Nextcloud ones using `occ app:enable calendar`, `occ app:enable contacts`, etc.\n\nAll information above is taken exclusively from **Nextcloud Version 30**, Passage 1.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer accurately reflects the content, steps, version table, and warnings exclusively from the provided Nextcloud 30 gold reference passage without introducing any instructions from other versions."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0012",
+      "query_text": "In Nextcloud 30, how do I configure Requirements?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_0",
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_0",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_0",
+            "nextcloud_28_admin_manual_configuration_user_user_auth_ldap_rst_1",
+            "nextcloud_29_admin_manual_configuration_user_user_auth_ldap_rst_1"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for Nextcloud 30 (Passage 3, Product: Nextcloud, Version: 30, Section: Configuration Parameters), there is no information about configuring \"Requirements\".\n\nThe only available guidance for Nextcloud 30 states:\n\n> Nextcloud uses the config/config.php file to control server operations. config/config.sample.php lists all the configurable parameters within Nextcloud, along with example or default values. This document provides a more detailed reference. Most options are configurable on your Admin page, so it is usually not necessary to edit config/config.php. The installer creates a configuration containing the essential parameters. Only manually add configuration parameters to config/config.php if you need to use a special value for a parameter. Do not copy everything from config/config.sample.php. Only enter the parameters you wish to modify!\n\nNo other passages for version 30 mention \"Requirements\" or how to configure them.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly states there is no information about configuring \"Requirements\" for Nextcloud 30, while the gold reference passage directly addresses database requirements and version selection specifically for Nextcloud 30."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_0",
+            "nextcloud_30_admin_manual_configuration_user_user_auth_ldap_rst_1",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_66",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_32",
+            "nextcloud_30_admin_manual_ai_app_translate2_rst_1"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for Nextcloud 30, there is no configuration parameter or section named \"Requirements\" that can be set in config/config.php.\n\nThe only passage that discusses requirements is **Passage 5 (Product: Nextcloud, Version: 30, Section: Requirements)**. It lists hardware and software prerequisites for a specific External App (requiring AppAPI v3.1.0 or higher, NVIDIA GPU with \u22654 GB VRAM, CUDA \u2265 v12.2.2, x86 CPU with 4-8 cores, and \u22656 GB RAM). These are **system-level prerequisites**, not configurable parameters.\n\nFor general Nextcloud 30 configuration, refer to **Passage 1 (Product: Nextcloud, Version: 30, Section: Configuration Parameters)**, which states that configuration is done via the `config/config.php` file (based on `config/config.sample.php`). Only add parameters you need to change; most settings are available on the Admin page.\n\nNo other passages mention a \"Requirements\" configuration option.",
+          "judge_category": "wrong",
+          "judge_reason": "**CATEGORY:** wrong  \n**REASON:** The assistant incorrectly concludes there is no \"Requirements\" configuration and focuses on config.php and an unrelated External App passage, while the gold reference passage for Nextcloud 30 clearly discusses choosing and setting up a database according to the Nextcloud System Requirements."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_server_config_sample_php_parameters_rst_30",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_32",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_29",
+            "nextcloud_29_admin_manual_office_configuration_rst_2",
+            "nextcloud_28_admin_manual_office_configuration_rst_2"
+          ],
+          "answer": "**Answer:**\n\nI cannot provide instructions on how to configure \"Requirements\" in Nextcloud 30.\n\nThe provided documentation passages for Nextcloud 30 (Passage 2) only cover the `config_is_readonly` setting. No passages for version 30 (or any version) contain any information about a \"Requirements\" configuration, section, or feature.\n\nAll responses must be based exclusively on the supplied passages, which do not mention this topic.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly claims there is no information about \"Requirements\" in the provided passages, while the gold reference passage for Nextcloud 30 explicitly discusses checking the Nextcloud System Requirements and selecting a recommended database version."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0013",
+      "query_text": "What is the recommended setup for Transactional file locking in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_files_files_locking_transactional_rst_0",
+            "nextcloud_29_admin_manual_configuration_files_files_locking_transactional_rst_0",
+            "nextcloud_28_admin_manual_configuration_files_files_locking_transactional_rst_0",
+            "nextcloud_28_admin_manual_configuration_database_linux_database_configuration_rst_1",
+            "nextcloud_30_admin_manual_configuration_database_linux_database_configuration_rst_2"
+          ],
+          "answer": "**Recommended setup for Transactional file locking in Nextcloud 30 (from Passage 1):**\n\nNextcloud 30 uses the **database locking backend by default** for Transactional File Locking. This places a significant load on your database.\n\nFor optimal performance, especially on servers with heavy workloads, it is recommended to install a memcache to relieve the database load. Specifically, you must:\n\n- Install the Redis server and the corresponding PHP module.\n- Add the following configuration to your `config.php` file:\n\n```php\n'memcache.locking' => '\\OC\\Memcache\\Redis',\n'redis' => array(\n    'host' => 'localhost',\n    'port' => 6379,\n    'timeout' => 0.0,\n    'password' => '', // Optional, if not defined no password will be used.\n),\n```\n\nFor enhanced security, configure Redis to require a password (see http://redis.io/topics/security).\n\nAll information cited from **Nextcloud 30, Section: Transactional file locking** (Passage 1). No configuration for `'filelocking.enabled'` is mentioned for version 30.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant's answer accurately reflects the recommended configuration for Nextcloud 30 as described in the gold reference passage, using the default database locking backend and the Redis memcache setup without introducing any parameters, steps, or instructions from other versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_files_files_locking_transactional_rst_0",
+            "nextcloud_30_admin_manual_configuration_database_linux_database_configuration_rst_2",
+            "nextcloud_30_admin_manual_file_workflows_access_control_rst_5",
+            "nextcloud_30_admin_manual_configuration_files_files_locking_transactional_rst_1",
+            "nextcloud_30_admin_manual_installation_php_configuration_rst_2"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Nextcloud 30** (Passage 1 and Passage 4, Section: Transactional file locking), the recommended setup for Transactional File Locking is as follows:\n\n- Transactional File locking uses the **database locking backend by default**, which places a significant load on your database.\n- For servers with heavy workloads, administrators **should install a memcache** to relieve the database load and improve performance.\n- The recommended memcache for Transactional File Locking is **Redis** (Memcached is explicitly not suitable).\n- You must install the Redis server and the corresponding PHP module.\n- Configure Redis in your `config.php` file. \n\n**Recommended configuration (Passage 1):**\n```php\n'memcache.locking' => '\\OC\\Memcache\\Redis',\n'redis' => array(\n    'host' => 'localhost',\n    'port' => 6379,\n    'timeout' => 0.0,\n    'password' => '', // Optional, if not defined no password will be used.\n),\n```\n\n**Enhanced security recommendation (Passage 1):** Configure Redis to require a password (see http://redis.io/topics/security).\n\n**Alternative configuration if Redis is running on the same system (Passage 4):**\n```php\n'memcache.locking' => '\\OC\\Memcache\\Redis',\n'redis' => array(\n    'host' => '/var/run/redis/redis.sock',\n    'port' => 0,\n    'timeout' => 0.0,\n),\n```\n\nThese configurations are taken directly from Nextcloud 30 documentation. See `config.sample.php` for additional examples.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant's answer is fully consistent with the provided Gold Reference Passage for Nextcloud 30, accurately reflecting the default database backend behavior, the recommendation to use Redis for memcache.locking, the exact configuration examples, security advice, and Unix socket alternative without introducing any elements from other versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_files_files_locking_transactional_rst_0",
+            "nextcloud_29_admin_manual_configuration_files_files_locking_transactional_rst_0",
+            "nextcloud_28_admin_manual_configuration_files_files_locking_transactional_rst_0",
+            "nextcloud_29_admin_manual_issues_general_troubleshooting_rst_1",
+            "nextcloud_28_admin_manual_issues_general_troubleshooting_rst_1"
+          ],
+          "answer": "**Answer:**\n\nAccording to **Passage 1 (Product: Nextcloud, Version: 30, Section: Transactional file locking)**, the recommended setup for Transactional File Locking in Nextcloud 30 is as follows:\n\n- Transactional File locking uses the **database locking backend by default** (Nextcloud 30).\n- This places a significant load on your database.\n- For servers with heavy workloads, admins **should install a memcache** to relieve the database load and improve performance (Nextcloud 30).\n- To use a memcache with Transactional File Locking, you must install the Redis server and the corresponding PHP module (Nextcloud 30).\n- After installing Redis, add the following configuration to your `config.php` file (Nextcloud 30):\n\n```php\n'memcache.locking' => '\\OC\\Memcache\\Redis',\n'redis' => array(\n    'host' => 'localhost',\n    'port' => 6379,\n    'timeout' => 0.0,\n    'password' => '', // Optional, if not defined no password will be used.\n),\n```\n\n- For enhanced security, it is recommended to configure Redis to require a password (Nextcloud 30).\n\nThis is the complete recommended configuration based solely on the provided documentation for Nextcloud 30.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer is based exclusively on the provided Gold Reference Passage for Nextcloud 30, accurately reflects its content and recommendations without introducing any instructions from other versions."
+        }
+      }
+    },
+    {
+      "query_id": "q_nextcloud_0014",
+      "query_text": "Where can I find instructions to manage Run occ as your HTTP user in Nextcloud 30?",
+      "product": "Nextcloud",
+      "target_version": "30",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "nextcloud_28_admin_manual_configuration_server_occ_command_rst_0",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_0",
+            "nextcloud_29_admin_manual_configuration_server_occ_command_rst_0",
+            "nextcloud_29_admin_manual_configuration_server_occ_command_rst_2",
+            "nextcloud_28_admin_manual_configuration_server_occ_command_rst_2"
+          ],
+          "answer": "**Answer:**\n\nInstructions for \"Run occ as your HTTP user\" in **Nextcloud 30** are not available in the provided documentation.\n\nThe passages contain this section only for:\n- Nextcloud 29 (Passage 4)\n- Nextcloud 28 (Passage 5)\n\nNo equivalent section or instructions for running occ as the HTTP user are present for **Nextcloud 30** (only a general \"Using the occ command\" description exists in Passage 2 for version 30).",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly states that specific \"Run occ as your HTTP user\" instructions are not present for Nextcloud 30 in the provided passages and only exist for older versions (28/29), without mixing any commands or steps from other versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_0",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_2",
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_43",
+            "nextcloud_30_admin_manual_configuration_user_user_auth_ldap_cleanup_rst_1",
+            "nextcloud_30_admin_manual_configuration_user_instruction_set_for_users_rst_1"
+          ],
+          "answer": "**Answer:**\n\nInstructions to manage \"Run occ as your HTTP user\" in **Nextcloud 30** are located in **Passage 2 (Product: Nextcloud, Version: 30, Section: Run occ as your HTTP user)**.\n\nThis passage provides the exact commands and syntax for running occ as the HTTP user (e.g. `sudo -u www-data php occ`), including examples such as:\n\n- `sudo -u www-data php occ -h`\n- `sudo -u www-data php occ -V`\n- `sudo -u www-data php occ status`\n- `sudo -u www-data php occ help maintenance:mode`\n\nIt also details the general syntax: `occ [options] command [arguments]` and output formatting options (`--output=json`, `--output=jsonpretty`).\n\nAll instructions in this section apply specifically to **Nextcloud 30**.",
+          "judge_category": "wrong",
+          "judge_reason": "**CATEGORY:** mixed_version  \n**REASON:** The assistant correctly identifies the Nextcloud 30 section but quotes and presents example commands and output that are taken from older versions (e.g. version 19.0.0), mixing version-specific output and examples with the target version 30."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "nextcloud_30_admin_manual_configuration_server_occ_command_rst_3",
+            "nextcloud_29_admin_manual_configuration_server_occ_command_rst_3",
+            "nextcloud_28_admin_manual_configuration_server_occ_command_rst_3",
+            "nextcloud_29_admin_manual_configuration_server_config_sample_php_parameters_rst_43",
+            "nextcloud_30_admin_manual_configuration_server_config_sample_php_parameters_rst_48"
+          ],
+          "answer": "**Answer:**\n\nI cannot provide instructions for \"Run occ as your HTTP user\" in Nextcloud 30, as this topic is not covered in any of the provided documentation passages for version 30 (or any other version). \n\nThe available passages for Nextcloud 30 only contain information about:\n- Enabling autocompletion (Passage 1 and Passage 5 \u2013 Memory caching backend configuration).\n\nNo other sections or instructions are present in the supplied documentation.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly claims that instructions for running occ as the HTTP user are not covered in the documentation, when the provided Gold Reference Passage explicitly contains multiple examples of running occ with \"sudo -u www-data\" (the standard way to run occ as the HTTP user)."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0000",
+      "query_text": "In Django 5.1, how do I configure SERVER_EMAIL?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_0_releases_1_2_txt_7",
+            "django_4_2_releases_1_2_txt_7",
+            "django_5_1_releases_1_2_txt_7",
+            "django_4_2_topics_email_txt_1",
+            "django_5_0_topics_email_txt_1"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages for Django 5.1 (Passage 3, Section: Email backends) do not contain any information about configuring `SERVER_EMAIL`.\n\nNo other passages mention `SERVER_EMAIL` either. Therefore, it is not possible to answer this question using ONLY the provided documentation.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly claims that SERVER_EMAIL is not mentioned in the Django 5.1 documentation and cannot be answered, when the gold reference passage explicitly defines its default value and purpose for version 5.1."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_releases_1_2_txt_7",
+            "django_5_1_topics_email_txt_4",
+            "django_5_1_howto_error-reporting_txt_1",
+            "django_5_1_topics_email_txt_0",
+            "django_5_1_topics_email_txt_15"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Django 5.1**, the `SERVER_EMAIL` setting is mentioned in **Passage 3 (Product: Django, Version: 5.1, Section: Server errors)**.\n\nTo configure `SERVER_EMAIL`, you modify the `SERVER_EMAIL` setting in your Django project's settings file. This setting determines the \"From:\" header of error emails sent to the ADMINS when an unhandled exception occurs (HTTP 500 or greater) while `DEBUG` is `False`.\n\nThe passage states:  \n> \"To use a different sender address, modify the **SERVEREMAIL** setting.\"\n\nNo other configuration steps, parameters, or methods for `SERVER_EMAIL` are provided in any of the passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer contains a critical factual error by claiming the setting is modified as \"SERVEREMAIL\" (no underscore), which is incorrect for Django 5.1 (and all versions); the correct setting name is SERVER_EMAIL."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_4_2_releases_1_2_txt_7",
+            "django_5_0_releases_1_2_txt_7",
+            "django_5_1_releases_1_2_txt_7",
+            "django_5_0_ref_settings_txt_32",
+            "django_5_1_ref_settings_txt_32"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages for Django 5.1 (Passage 3 and Passage 5) do not contain any information about configuring `SERVER_EMAIL`.\n\nPassage 5 (Django 5.1, Section: DEFAULT_FROM_EMAIL) only mentions that `DEFAULT_FROM_EMAIL` \"doesn't affect error messages sent to ADMINS and MANAGERS. See SERVEREMAIL for that.\" It provides no configuration instructions, default value, or further details for `SERVER_EMAIL`.\n\nNo other passages for version 5.1 contain instructions on this setting. Therefore, it is not possible to answer the question using only the provided documentation.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly claims that no information about SERVER_EMAIL exists in the Django 5.1 documentation, despite the gold reference passage explicitly providing the default value and explanation for that exact version."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0001",
+      "query_text": "What is the recommended setup for The ``ds_input`` dictionary in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_contrib_gis_gdal_txt_24",
+            "django_4_2_ref_contrib_gis_gdal_txt_24",
+            "django_5_1_ref_contrib_gis_gdal_txt_25",
+            "django_4_2_intro_tutorial02_txt_4",
+            "django_5_1_intro_tutorial02_txt_4"
+          ],
+          "answer": "**The provided documentation passages do not contain any recommended setup, specific keys, structure, or example for the ``ds_input`` (or ``dsinput``) dictionary in Django 5.1.**\n\nPassage 3 (the only passage covering rasters in Django 5.1) states only that:\n- A new raster is created when a dict is passed to the GDALRaster constructor.\n- The dictionary contains defining parameters such as the origin, size, or spatial reference system.\n- It can also contain pixel data and information about the format.\n- The definition is specific to Django and inspired by GeoJSON.\n- Examples of using the different keys can be found in the documentation of the corresponding attributes and methods of the GDALRaster and GDALBand classes.\n\nNo actual recommended keys, format, or example dictionary is given in the supplied passages for Django 5.1 (or any version).",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly states that the provided passages contain no specific recommended setup, keys, structure, or example for the ds_input dictionary in Django 5.1, which accurately reflects the content of the retrieved passages and the gold reference for version 5.1 without introducing any information from other versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_gis_gdal_txt_25",
+            "django_5_1_intro_tutorial02_txt_4",
+            "django_5_1_topics_db_optimization_txt_6",
+            "django_5_1_topics_http_sessions_txt_12",
+            "django_5_1_misc_design-philosophies_txt_2"
+          ],
+          "answer": "**Answer:**\n\nAccording to Passage 1 (Product: Django, Version: 5.1, Section: Creating rasters from data), the `dsinput` parameter (referred to as the dictionary passed to the GDALRaster constructor) is used to create a new raster from scratch.\n\nThe recommended setup is as follows:\n\n- Pass a **dict** to the GDALRaster constructor.\n- The dictionary contains defining parameters of the new raster, such as the origin, size, or spatial reference system.\n- The dictionary can also contain pixel data and information about the format of the new raster.\n- The resulting raster can be file-based or memory-based, depending on the driver specified.\n- There is **no standard** for describing raster data in a dictionary or JSON flavor. The definition of the dictionary input to the GDALRaster class is **specific to Django**.\n- It is inspired by the GeoJSON format (https://geojson.org/), but the GeoJSON standard is currently limited to vector formats.\n\nExamples of using the different keys can be found in the documentation of the corresponding attributes and methods of the GDALRaster and GDALBand classes (Django 5.1).\n\nNo other passages contain information about `ds_input` / `dsinput`.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is incorrect and irrelevant; it fabricates a generic description of a \"dsinput\" / \"dsinput\" dictionary for GDALRaster while completely ignoring the actual structure and parameters (such as nr_ofbands, bands, papszoptions, etc.) defined in the provided Gold Reference Passage for Django 5.1."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_unicode_txt_6",
+            "django_4_2_ref_unicode_txt_6",
+            "django_5_1_ref_unicode_txt_6",
+            "django_5_0_faq_general_txt_1",
+            "django_5_1_faq_general_txt_1"
+          ],
+          "answer": "**I cannot provide an answer.**\n\nThe provided documentation passages contain **no information** about `ds_input`, any recommended setup for a `ds_input` dictionary, or related configuration in Django 5.1 (or any version). \n\nAll passages discuss only Unicode string handling in model fields (Versions 4.2, 5.0, 5.1) or the origin/pronunciation of the name \"Django\" (Versions 5.0, 5.1). Per the instructions, I must answer using **ONLY** the provided documentation passages and cannot assume or invent any additional information.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly determined that the retrieved passages contain no relevant information about `ds_input` and refused to fabricate an answer, but this does not constitute giving instructions for the target version, making the response fall into the wrong category per the evaluation criteria."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0002",
+      "query_text": "Where can I find instructions to manage Frames in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_clickjacking_txt_3",
+            "django_5_0_ref_clickjacking_txt_3",
+            "django_4_2_ref_clickjacking_txt_3",
+            "django_5_1_intro_contributing_txt_3",
+            "django_5_0_intro_contributing_txt_3"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions to manage Frames (via the `X-Frame-Options` header) in Django 5.1 in the section **\"Setting `X-Frame-Options` per view\"** (Passage 1, Product: Django, Version: 5.1).\n\nThis section shows how to use the decorators `@xframe_optionsdeny` and `@xframe_optionssameorigin` (from `django.views.decorators.clickjacking`) on a per-view basis. It also notes that decorators override the middleware and that support for wrapping asynchronous view functions was added in version 5.0.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant's answer is completely irrelevant to the gold reference passage for Django 5.1, which is about database Window functions (RowRange/ValueRange), not clickjacking or X-Frame-Options."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_clickjacking_txt_3",
+            "django_5_1_intro_contributing_txt_3",
+            "django_5_1_ref_templates_index_txt_0",
+            "django_5_1_intro_whatsnext_txt_3",
+            "django_5_1_ref_clickjacking_txt_1"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions to manage Frames (specifically preventing clickjacking via the `X-Frame-Options` header) in Django 5.1 in the following sections:\n\n- **Preventing clickjacking** (Product: Django, Version: 5.1, Passage 5): This covers the middleware that sets the header in all responses and the set of view decorators that can be used to override the middleware or to only set the header for certain views. It explains that the `X-Frame-Options` HTTP header will only be set if it is not already present in the response.\n\n- **Setting ``X-Frame-Options`` per view** (Product: Django, Version: 5.1, Passage 1): This provides the specific decorators `@xframe_optionsdeny` and `@xframe_optionssameorigin` (from `django.views.decorators.clickjacking`). It notes that decorators can be used in conjunction with the middleware (with the decorator overriding the middleware) and that support for wrapping asynchronous view functions was added in Django 5.0.\n\nThese are the only passages in the provided documentation that contain instructions related to managing frames.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant's answer is completely irrelevant to the user's question about managing Frames in Django 5.1; it discusses clickjacking and X-Frame-Options, while the gold reference passage shows the actual 5.1 content is about database Window frame clauses (RowRange/ValueRange)."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_4_2_topics_signals_txt_4",
+            "django_5_0_topics_signals_txt_4",
+            "django_5_1_topics_signals_txt_4",
+            "django_5_1_ref_request-response_txt_28",
+            "django_5_0_ref_request-response_txt_28"
+          ],
+          "answer": "**I cannot answer this question using the provided documentation passages.**\n\nThe passages only cover:\n- Connecting to signals sent by specific senders (Django 4.2, 5.0, and 5.1)\n- Handling client disconnects during streaming responses (Django 5.0 and 5.1)\n\nNone of them contain any information about \"Frames\" or instructions for managing Frames in Django 5.1 (or any version).",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly determined that the retrieved passages contain no information about managing Frames and refused to answer, which is appropriate given the provided context, even though a relevant passage about window frame management (RowRange/ValueRange) exists for Django 5.1."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0003",
+      "query_text": "How should I handle Returns the enclosure length for every item in the feed. in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_contrib_syndication_txt_27",
+            "django_5_1_ref_contrib_syndication_txt_27",
+            "django_4_2_ref_contrib_syndication_txt_27",
+            "django_5_1_ref_contrib_syndication_txt_25",
+            "django_4_2_ref_contrib_syndication_txt_25"
+          ],
+          "answer": "**Answer:**\n\nIn Django 5.1, to handle \"Returns the enclosure length for every item in the feed,\" use the following approach from the provided documentation (Passage 2, Product: Django, Version: 5.1):\n\n```python\nitem_enclosurelength = 32000  # Hard-coded enclosure length.\n```\n\nThis is the method documented for Django 5.1. The framework will use this value when generating feeds that include enclosures. No additional methods or parameters are specified in the Django 5.1 passage for this functionality.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly extracts and presents the exact hard-coded example (item_enclosurelength = 32000) provided in the Django 5.1 gold reference passage without introducing any elements from other versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_syndication_txt_27",
+            "django_5_1_ref_contrib_syndication_txt_25",
+            "django_5_1_ref_contrib_syndication_txt_26",
+            "django_5_1_ref_contrib_gis_feeds_txt_1",
+            "django_5_1_ref_contrib_syndication_txt_20"
+          ],
+          "answer": "**Answer:**\n\nAccording to the Django 5.1 documentation (Passage 1, Section: Returns the enclosure length for every item in the feed), you should handle \u201cReturns the enclosure length for every item in the feed\u201d by implementing the `item_enclosurelength` method (or setting the `item_enclosurelength` attribute) on your `django.contrib.syndication.views.Feed` subclass.\n\n**Example from the documentation (Django 5.1):**\n\n```python\nitem_enclosurelength = 32000  # Hard-coded enclosure length.\n```\n\nAlternatively, you can define it as a method:\n\n```python\ndef item_enclosurelength(self, item):\n    \"\"\"Takes an item, as returned by items(), and returns the item's enclosure length.\"\"\"\n    ...\n```\n\n**Important notes from Django 5.1 (Passages 1\u20133):**\n\n- This is one of three required values if you are publishing enclosures **and** you are **not** using `itemenclosures()` (Passage 2).\n- The framework looks for values in this specific order: `itemenclosures`, then `item_enclosureurl` + `item_enclosurelength` + `item_enclosure_mimetype`.\n- The returned value must be either an integer or a string representation of an integer, in bytes (Passage 3).\n\nAll information is taken exclusively from the provided Django 5.1 passages.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer accurately reflects the Django 5.1 documentation for item_enclosurelength, uses only 5.1-specific guidance and examples, and does not introduce any elements from older versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_contrib_syndication_txt_27",
+            "django_5_1_ref_contrib_syndication_txt_27",
+            "django_4_2_ref_contrib_syndication_txt_27",
+            "django_5_1_topics_db_models_txt_6",
+            "django_5_0_topics_db_models_txt_6"
+          ],
+          "answer": "**Answer:**\n\nIn Django 5.1, to handle \"Returns the enclosure length for every item in the feed\", use the following approach as documented in the syndication feed framework:\n\n```python\nitem_enclosurelength = 32000  # Hard-coded enclosure length.\n```\n\nThis is the method shown for providing the enclosure length for every item in the feed (Product: Django, Version: 5.1, Section: Returns the enclosure length for every item in the feed.).\n\nIf you are publishing enclosures and not using `item_enclosures`, you must also implement one of the MIME type methods that the framework checks in order (Product: Django, Version: 5.1, Section: Returns the enclosure length for every item in the feed.):\n\n```python\ndef item_enclosure_mimetype(self, item):\n    \"\"\"Takes an item, as returned by items(), and returns the item's enclosure MIME type.\"\"\"\n```\n\nThe exact same pattern and hard-coded value are used in Django 5.1.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer directly uses the exact hard-coded value (32000) and method structure shown in the Django 5.1 gold reference passage without introducing any elements from prior versions."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0004",
+      "query_text": "What are the correct settings and requirements for DateField`` truncation in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_4_2_ref_models_database-functions_txt_13",
+            "django_4_2_ref_settings_txt_77",
+            "django_5_1_ref_models_fields_txt_20",
+            "django_4_2_ref_contrib_postgres_fields_txt_19",
+            "django_5_1_ref_contrib_postgres_fields_txt_18"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages do **not** contain any information about DateField truncation (or the `Trunc*` database functions) specifically for **Django 5.1**.\n\nThe only passage that discusses truncation is **Passage 1 (Product: Django, Version: 4.2, Section: DateField truncation)**. According to that passage, the following classes are available in Django 4.2:\n\n- `TruncYear(expression, outputfield=None, tzinfo=None, isdst=None, extra)`\n- `TruncMonth(expression, outputfield=None, tzinfo=None, isdst=None, extra)`\n- `TruncWeek(expression, outputfield=None, tzinfo=None, isdst=None, extra)`\n- `TruncQuarter(expression, outputfield=None, tzinfo=None, isdst=None, extra)`\n\nIt states these are equivalent to `Trunc('datefield', kind)` and can be used with `DateField` only for date-part kinds (year, month, week, quarter). The passage also notes that **the `isdst` parameter is deprecated as of Django 4.0 and will be removed in Django 5.0**.\n\nNo updated truncation settings, requirements, or behavior for **Django 5.1** are present in any of the supplied passages (including the Django 5.1 passages about `DateTimeField` and `DateRangeField`).\n\nTherefore, based **strictly** on the provided documentation, it is not possible to state the correct settings and requirements for DateField truncation in Django 5.1.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly states that the provided passages contain no Django 5.1-specific information on DateField truncation and explicitly notes that the isdst deprecation (from the 4.2 passage) leads to its removal in 5.0, avoiding any mixing of outdated parameters or instructions for the target version 5.1."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_models_fields_txt_20",
+            "django_5_1_ref_contrib_postgres_fields_txt_18",
+            "django_5_1_ref_settings_txt_72",
+            "django_5_1_ref_settings_txt_53",
+            "django_5_1_ref_models_database-functions_txt_13"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Django 5.1**, the correct settings and requirements for **DateField truncation** are found in Passage 5 (Product: Django, Version: 5.1, Section: DateField`` truncation).\n\n### Requirements:\n- Use one of the following truncation classes: **TruncYear**, **TruncMonth**, **TruncWeek**, or **TruncQuarter**.\n- These are logically equivalent to `Trunc('datefield', kind)`.\n- The `expression` passed to these functions **must** have an output field of either `DateField` or `DateTimeField`.\n- Since **DateField** objects do not have a time component, **only** the Trunc subclasses that deal with date-parts can be used with `DateField`. These are:\n  - `TruncYear(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'year'`\n  - `TruncMonth(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'month'`\n  - `TruncWeek(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'week'` (Truncates to midnight on the Monday of the week)\n  - `TruncQuarter(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'quarter'`\n\nNo other truncation kinds are valid for `DateField` in Django 5.1.\n\n**Note:** No specific global *settings* (such as `YEAR_MONTH_FORMAT` or `MONTH_DAY_FORMAT` from Passages 3 and 4) are mentioned as requirements for truncation itself. Those settings relate only to display formatting on admin change-list pages.\n\nThis is based **exclusively** on Django 5.1 documentation.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer accurately reflects only the Django 5.1 truncation behavior for DateField as described in the gold reference passage, correctly listing the allowed Trunc* classes and constraints without introducing any information from other versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_models_database-functions_txt_13",
+            "django_5_1_ref_models_database-functions_txt_13",
+            "django_5_1_ref_settings_txt_53",
+            "django_5_0_ref_settings_txt_52",
+            "django_5_0_releases_4_0_txt_15"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Django 5.1** (Passage 2, Section: DateField truncation):\n\nThe following truncation classes can be used with `DateField`:\n\n- `TruncYear(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'year'`\n- `TruncMonth(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'month'`\n- `TruncWeek(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'week'` (Truncates to midnight on the Monday of the week)\n- `TruncQuarter(expression, outputfield=None, tzinfo=None, extra)` \u2014 `kind = 'quarter'`\n\nThese are logically equivalent to `Trunc('datefield', kind)`. They truncate all parts of the date up to the specified kind, which allows grouping or filtering dates with less precision.\n\n**Requirements:**\n- The `expression` can have an `output_field` of either `DateField` or `DateTimeField`.\n- Since `DateField`s do not have a time component, **only Trunc subclasses that deal with date-parts** can be used with `DateField`.\n\nNo other settings (such as `MONTH_DAY_FORMAT` or localization settings) are mentioned in the Django 5.1 DateField truncation documentation.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant's answer accurately reflects the truncation classes, their parameters, behavior, and DateField-specific requirements exactly as described in the Django 5.1 gold reference passage, without introducing any information from other versions."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0005",
+      "query_text": "In version 5.1 of Django, what is the procedure for Database-Functions ASin?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_4_2_releases_2_1_txt_3",
+            "django_5_0_releases_2_1_txt_3",
+            "django_5_1_releases_2_1_txt_3",
+            "django_4_2_ref_models_expressions_txt_10",
+            "django_5_1_ref_models_expressions_txt_11"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages for Django version 5.1 (Passage 3: Models and Passage 5: Func() expressions) do not contain any information about a database function named **ASin** (or `django.db.models.functions.ASin`).\n\nNo procedure, usage instructions, parameters, or implementation details for ASin are mentioned in the passages for version 5.1.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly states that no information about ASin is present in the provided passages for Django 5.1, which is accurate given the retrieved context, and it does not introduce or mix any details from other versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_releases_2_1_txt_3",
+            "django_5_1_ref_models_expressions_txt_11",
+            "django_5_1_releases_3_0_txt_6",
+            "django_5_1_releases_1_0-porting-guide_txt_21",
+            "django_5_1_ref_models_expressions_txt_32"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages for Django version 5.1 do not contain any information about a database function named **ASin** (or `ASin`, `asin`, `ArcSin`, etc.), nor do they describe any specific procedure for implementing, customizing, or registering it.\n\nPassage 2 discusses how to customize `Func()` expressions in general (including subclassing, using `asmysql()`, `template`, `function`, `output_field`, etc.) and warns about SQL injection risks with `extra` and `extracontext`. Passage 5 shows an example of monkey-patching support for a third-party backend (specifically for the `Length` function using `as_sqlserver()`).\n\nNo passage mentions ASin or provides a procedure for it in Django 5.1. Therefore, no answer can be given based solely on the supplied documentation.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly states that no information about ASin exists in Django 5.1, despite the gold reference passage explicitly documenting the ASin database function for that exact version, including its usage and registration as a lookup."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_django-admin_txt_44",
+            "django_5_0_ref_django-admin_txt_44",
+            "django_4_2_ref_django-admin_txt_44",
+            "django_5_0_releases_1_6_txt_18",
+            "django_4_2_releases_1_6_txt_18"
+          ],
+          "answer": "**Answer:**\n\nI cannot provide any information on \"Database-Functions ASin\" (or ASin) in Django 5.1.\n\nThe provided documentation passages for Django 5.1 (Passage 1) only cover the Bash completion feature and contain no mention of database functions, ASin, ArcSin, trigonometric functions, or any related procedure. Per the instructions, I must answer using ONLY the provided documentation passages and cannot assume or invent information not present in them.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly claims there is no information on ASin in Django 5.1 and refuses to answer, even though the gold reference passage explicitly documents the ASin database function for that exact version."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0006",
+      "query_text": "In Django 5.1, how do I configure How Django discloses security issues?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_4_2_releases_1_3_5_txt_0",
+            "django_5_0_releases_1_3_5_txt_0",
+            "django_5_1_releases_1_3_5_txt_0",
+            "django_5_0_faq_help_txt_3",
+            "django_4_2_faq_help_txt_3"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Django 5.1** (Passage 3, Section: Django 1.3.5 release notes), there is no information about configuring how Django discloses security issues.\n\nThe only relevant guidance in the passages for **Django 5.1** is the security release note from December 10, 2012, regarding Django 1.3.5 addressing two security issues. No configuration options, procedures, or settings related to \"how Django discloses security issues\" are mentioned in any passage for version 5.1.\n\nFor reporting a potential security problem in **Django 5.1**, the documentation does not contain specific instructions (Passage 3 does not include the security reporting section). Passages 4 and 5 only provide reporting guidance for **Django 5.0** and **Django 4.2** respectively.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly claims there is no information and fails to provide the actual configuration and disclosure process documented for Django 5.1, making the answer irrelevant to the user's question."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_releases_1_3_5_txt_0",
+            "django_5_1_internals_security_txt_0",
+            "django_5_1_releases_1_4_3_txt_0",
+            "django_5_1_internals_security_txt_11",
+            "django_5_1_faq_help_txt_2"
+          ],
+          "answer": "**I cannot provide an answer using ONLY the provided documentation passages.**\n\nThe passages do not contain any configuration instructions, settings, parameters, or steps for \"How Django discloses security issues\" (or any related configuration) in Django 5.1. \n\nPassage 4 only describes the disclosure process at a high level and does not mention any configurable options. All other passages discuss unrelated release notes or reporting procedures. No version-specific configuration for Django 5.1 is present.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly determined that the provided passages contain no configuration instructions for how Django discloses security issues and refused to fabricate an answer, which aligns with the gold reference passage also containing zero configuration details."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_1_releases_1_3_5_txt_0",
+            "django_4_2_releases_1_3_5_txt_0",
+            "django_5_0_releases_1_3_5_txt_0",
+            "django_5_0_faq_help_txt_3",
+            "django_4_2_faq_help_txt_3"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Django 5.1** (Passage 1, Section: Django 1.3.5 release notes), there is no information about configuring how Django discloses security issues.\n\nThe only relevant passage for Django 5.1 discusses the **Django 1.3.5** security release from December 10, 2012, which addressed two security issues from the 1.3 series. It does not contain any configuration options, settings, or procedures for how Django discloses security issues.\n\nNo other passages for version 5.1 provide instructions on this topic.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly claims there is no information for Django 5.1 and focuses on an irrelevant 2012 security release note, while the gold reference passage for 5.1 directly addresses how the Django team handles and discloses security issues."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0007",
+      "query_text": "What is the recommended setup for USE_TZ in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_settings_txt_67",
+            "django_4_2_ref_settings_txt_70",
+            "django_5_0_ref_settings_txt_66",
+            "django_5_0_releases_4_0_txt_14",
+            "django_4_2_releases_4_0_txt_14"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Django 5.1** (Passage 1, Section: TIME_ZONE), the recommended setup is to use **USE_TZ = True**.\n\nThis is supported by the fact that:\n\n- The default `settings.py` file created by `django-admin startproject` has included `USE_TZ = True` since Django 1.4 (Passage 4, Product: Django, Version: 5.0, Section: Time zone support \u2014 the only passage that discusses the default behavior of USE_TZ).\n- Django 5.0 made time zone support enabled by default (USE_TZ=True) as a matter of good practice (Passage 4).\n\nNo passage for Django 5.1 contradicts this recommendation, and Passage 1 (Django 5.1) describes the behavior of TIME_ZONE under the assumption that USE_TZ is enabled. Therefore, the recommended setup for **Django 5.1** is `USE_TZ = True`.",
+          "judge_category": "version_correct",
+          "judge_reason": "The answer consistently recommends USE_TZ=True as the default for the target version 5.1 (matching the gold passage) and only references prior versions to note the historical change without introducing any conflicting parameters or steps."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_settings_txt_67",
+            "django_5_1_releases_4_0_txt_14",
+            "django_5_1_faq_usage_txt_0",
+            "django_5_1_releases_1_11_txt_16",
+            "django_5_1_releases_1_5_txt_1"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Django 5.1**, the recommended setup is to enable time zone support.\n\nFrom **Passage 2 (Product: Django, Version: 5.1, Section: Time zone support)**:\n\n> In order to follow good practice, the default value of the **USE_TZ** setting will change from False to True, and time zone support will be enabled by default, in Django 5.0. Note that the default settings.py file created by django-admin startproject includes **USE_TZ = True** since Django 1.4.\n\nThis is further supported by **Passage 1 (Product: Django, Version: 5.1, Section: TIME_ZONE)**, which describes how `TIME_ZONE` behaves when `USE_TZ` is True (it becomes the default time zone used to display datetimes in templates and interpret datetimes in forms).\n\nTherefore, the recommended setup for **USE_TZ in Django 5.1** is `USE_TZ = True`.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant correctly identifies that USE_TZ defaults to True in Django 5.1 (and has since 5.0), cites the relevant 5.1 passages, and gives the accurate recommendation without mixing in outdated instructions from pre-5.0 behavior."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_0_releases_1_4_txt_10",
+            "django_4_2_releases_1_4_txt_10",
+            "django_5_1_releases_1_4_txt_10",
+            "django_5_0_releases_1_5_txt_28",
+            "django_4_2_releases_1_5_txt_28"
+          ],
+          "answer": "**I cannot answer this question.**\n\nThe provided documentation passages contain **no information** about `USE_TZ`, its recommended value, or any related timezone configuration in Django 5.1 (or any other version). \n\nPer the instructions, I must answer using **ONLY** the provided documentation passages and cannot assume or invent information not present in them. None of the passages (which cover only the HTML5 doctype change in versions 4.2/5.0/5.1 and the removal of `django.utils.simplejson` in versions 4.2/5.0) mention `USE_TZ`.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly refused to answer due to lack of relevant information in the provided passages, but this still constitutes a failure to answer the user's question about the recommended USE_TZ setup in Django 5.1."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0008",
+      "query_text": "Where can I find instructions to manage Subclassing forms in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_4_2_topics_forms_index_txt_11",
+            "django_5_0_topics_forms_index_txt_11",
+            "django_5_1_topics_forms_index_txt_11",
+            "django_4_2_releases_1_0_txt_3",
+            "django_5_1_releases_1_0_txt_3"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions for managing Subclassing forms in Django 5.1 in the section **\"More about Django Form classes\"** (Product: Django, Version: 5.1).\n\nAccording to Passage 3 (Product: Django, Version: 5.1, Section: More about Django Form classes):\n\n> All form classes are created as subclasses of either django.forms.Form or django.forms.ModelForm. You can think of ModelForm as a subclass of Form. Form and ModelForm actually inherit common functionality from a (private) BaseForm class, but this implementation detail is rarely important.\n\nThis is the only passage that directly addresses subclassing forms for Django 5.1.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant points to the wrong section (\"More about Django Form classes\") and only quotes a generic inheritance statement, while completely failing to provide the actual instructions on how to subclass forms that are present in the Gold Reference Passage for Django 5.1."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_topics_forms_index_txt_11",
+            "django_5_1_releases_1_0_txt_3",
+            "django_5_1_topics_db_models_txt_22",
+            "django_5_1_releases_1_0-porting-guide_txt_4",
+            "django_5_1_ref_class-based-views_mixins-editing_txt_0"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions for subclassing forms in Django 5.1 in the documentation for **django.views.generic.edit.FormMixin** (Product: Django, Version: 5.1, Section: FormMixin) and in the section **More about Django Form classes** (Product: Django, Version: 5.1, Section: More about Django Form classes).\n\nAccording to Passage 1 (Product: Django, Version: 5.1):  \n\"All form classes are created as subclasses of either django.forms.Form or django.forms.ModelForm.\"\n\nAccording to Passage 5 (Product: Django, Version: 5.1, Section: FormMixin), the FormMixin class provides the following relevant methods and attributes for working with subclassed forms:  \n- `formclass`: The form class to instantiate.  \n- `get_formclass()`: Retrieve the form class to instantiate. By default it returns `~django.views.generic.edit.FormMixin.formclass`.  \n- `getform(formclass=None)`: Instantiate an instance of formclass... If formclass isn't provided `get_formclass` will be used.  \n- `get_formkwargs()`: Build the keyword arguments required to instantiate the form.\n\nNo other passages contain instructions about subclassing forms.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer points to the wrong sections (FormMixin and generic views) and gives irrelevant information about form instantiation in class-based views, while completely failing to provide the actual instructions for subclassing forms that are present in the gold reference passage for Django 5.1."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_contrib_admin_javascript_txt_0",
+            "django_5_1_ref_contrib_admin_javascript_txt_0",
+            "django_4_2_topics_forms_index_txt_11",
+            "django_5_1_topics_forms_index_txt_11",
+            "django_5_0_topics_forms_index_txt_11"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions to manage Subclassing forms in Django 5.1 in the section **\"More about Django Form classes\"** (Product: Django, Version: 5.1, Passage 4).\n\nAccording to this documentation:\n\n> All form classes are created as subclasses of either django.forms.Form or django.forms.ModelForm. You can think of ModelForm as a subclass of Form. Form and ModelForm actually inherit common functionality from a (private) BaseForm class, but this implementation detail is rarely important.\n\nThis is the only passage that directly addresses subclassing forms for Django 5.1.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant points to the wrong section (\"More about Django Form classes\") and gives a generic explanation about BaseForm inheritance, while completely ignoring the actual relevant content about subclassing forms that is present in the Gold Reference Passage for Django 5.1."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0009",
+      "query_text": "How should I handle Slice transforms in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_contrib_postgres_fields_txt_6",
+            "django_4_2_ref_contrib_postgres_fields_txt_6",
+            "django_5_1_ref_contrib_postgres_fields_txt_6",
+            "django_4_2_ref_contrib_postgres_fields_txt_5",
+            "django_5_1_ref_contrib_postgres_fields_txt_5"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Django 5.1 (Passage 3, Section: Slice transforms)**, Slice transforms take a slice of the array. Any two non-negative integers can be used, separated by a single underscore. The lookups available after the transform do not change.\n\n**Example usage in Django 5.1:**\n\n```python\nPost.objects.filter(tags__01=[\"thoughts\"])\nPost.objects.filter(tags__0_2_contains=[\"thoughts\"])\n```\n\n**Important notes from Django 5.1 (Passage 3):**\n\n- PostgreSQL uses 1-based indexing for array fields when writing raw SQL.\n- However, these slices (and those used in indexes) use **0-based indexing** to be consistent with Python.\n- Multidimensional arrays with indexes and slices have esoteric behavior in PostgreSQL. It will always work to use indexes to reach down to the final underlying data, but **most other slices behave strangely at the database level and cannot be supported in a logical, consistent fashion by Django 5.1**.\n\nAll information above is taken exclusively from Passage 3 for Django 5.1.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant answer is fully consistent with the Django 5.1 gold reference passage, uses only 5.1-specific content and examples, and does not introduce any instructions from prior versions."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_postgres_fields_txt_6",
+            "django_5_1_ref_contrib_postgres_fields_txt_5",
+            "django_5_1_ref_models_expressions_txt_5",
+            "django_5_1_ref_models_lookups_txt_3",
+            "django_5_1_ref_contrib_gis_tutorial_txt_12"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Django 5.1**, Slice transforms are covered in the **Slice transforms** section (Passage 1).\n\n**How to use Slice transforms (Django 5.1):**\n\n- Slice transforms take a slice of the array using **two non-negative integers** separated by a **single underscore**.\n- The notation is: `field__start_end` (e.g. `tags__0_2`).\n- After applying the slice transform, the available lookups **do not change**.\n- These slices use **0-based indexing** to be consistent with Python (even though PostgreSQL uses 1-based indexing in raw SQL).\n\n**Examples from Django 5.1:**\n\n```python\nPost.objects.filter(tags__01=[\"thoughts\"])           # Slice from index 0 to 1\nPost.objects.filter(tags__0_2_contains=[\"thoughts\"]) # Slice from index 0 to 2 with contains lookup\n```\n\n**Important notes from Django 5.1 documentation:**\n\n- Multidimensional arrays have esoteric behavior with slices at the database level.\n- Most slices on multidimensional arrays **cannot be supported in a logical, consistent fashion by Django** (Passage 1).\n- For comparison, Index transforms (Passage 2) use a single integer (`tags_0`), while Slice transforms require the `start_end` format.\n\nThis is the complete guidance available for Slice transforms in **Django 5.1**.",
+          "judge_category": "version_correct",
+          "judge_reason": "The assistant's answer is fully consistent with the Django 5.1 gold reference passage, accurately describing slice syntax, 0-based indexing, lookup behavior, multidimensional array limitations, and provides examples taken directly from the 5.1 documentation without introducing any elements from other versions."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_0_howto_outputting-pdf_txt_3",
+            "django_4_2_howto_outputting-pdf_txt_3",
+            "django_5_1_howto_outputting-pdf_txt_3",
+            "django_4_2_topics_signals_txt_4",
+            "django_5_0_topics_signals_txt_4"
+          ],
+          "answer": "**I cannot answer this question.**\n\nThe provided documentation passages for Django 5.1 (and the other versions) only cover two unrelated topics:  \n- Generating PDF and other formats using third-party libraries such as reportlab (Passage 3).  \n- Connecting to signals sent by specific senders using the `@receiver` decorator (Passage 5, for version 5.0).\n\nNone of the passages mention Slice transforms, database transforms, lookups, or any related functionality. Per the instructions, I must answer using **ONLY** the provided documentation passages and cannot assume or invent information not present in them.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant refuses to answer and claims no relevant information exists in the passages, even though the gold reference passage for Django 5.1 directly explains Slice transforms."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0010",
+      "query_text": "What are the correct settings and requirements for ModelAdmin`` options in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_admin_index_txt_2",
+            "django_4_2_ref_contrib_admin_index_txt_2",
+            "django_5_0_ref_contrib_admin_index_txt_2",
+            "django_5_1_ref_contrib_admin_index_txt_0",
+            "django_5_0_ref_contrib_admin_index_txt_0"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Django 5.1** (Passage 1, Section: ModelAdmin objects), there are **no specific settings or requirements** for ModelAdmin options.\n\nThe documentation states:\n\n- The `ModelAdmin` class is the representation of a model in the admin interface (Django 5.1).\n- You can define a `ModelAdmin` subclass like this:\n\n```python\nfrom django.contrib import admin\nfrom myapp.models import Author\n\nclass AuthorAdmin(admin.ModelAdmin):\n    pass\n\nadmin.site.register(Author, AuthorAdmin)\n```\n\n- However, if you are happy with the default admin interface, **you don't need to define a ModelAdmin object at all**.\n- The model can be registered directly without any custom `ModelAdmin` description (Django 5.1):\n\n```python\nfrom django.contrib import admin\nfrom myapp.models import Author\n\nadmin.site.register(Author)\n```\n\nNo other options, parameters, or requirements for `ModelAdmin` are mentioned in the Django 5.1 documentation passages provided.",
+          "judge_category": "wrong",
+          "judge_reason": "**CATEGORY:** wrong  \n**REASON:** The assistant claims there are \"no specific settings or requirements for ModelAdmin options\" in Django 5.1, which is factually incorrect; the provided gold reference passage (and actual Django 5.1 documentation) details multiple ModelAdmin options such as list_display, @admin.display decorator, support for __ lookups, and special handling for ForeignKey/BooleanField/etc."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_admin_index_txt_2",
+            "django_5_1_ref_contrib_admin_index_txt_0",
+            "django_5_1_ref_contrib_admin_index_txt_55",
+            "django_5_1_ref_checks_txt_21",
+            "django_5_1_releases_1_0_txt_3"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Django 5.1**, the correct settings and requirements for `ModelAdmin` options are defined through validation checks performed on any `~django.contrib.admin.ModelAdmin` registered with the admin site (Passage 4, Product: Django, Version: 5.1, Section: ModelAdmin).\n\nThe following are the **exact requirements** stated:\n\n- `save_as` must be a boolean (admin.E101).\n- `save_on_top` must be a boolean (admin.E102).\n- `inlines` must be a list or tuple (admin.E103).\n- Any InlineModelAdmin must inherit from `InlineModelAdmin` (admin.E104).\n- Any InlineModelAdmin must have a `model` attribute (admin.E105).\n- The `model` attribute of an InlineModelAdmin must be a Model (admin.E106).\n- `list_display` must be a list or tuple (admin.E107).\n- Each item in `list_display` must be a callable, an attribute of the ModelAdmin class, or an attribute/method/field on the model (admin.E108).\n- Items in `list_display` must not be a many-to-many field or a reverse foreign key (admin.E109).\n- `list_display_links` must be a list, a tuple, or None (admin.E110).\n- Each item in `list_display_links` must be defined in `list_display` (admin.E111).\n- `list_filter` must be a list or tuple (admin.E112).\n- Items in `list_filter` must inherit from `ListFilter` (admin.E113) and must not inherit directly from `FieldListFilter` (admin.E114).\n- When using a 2-tuple in `list_filter`, the second element must inherit from `FieldListFilter` (admin.E115).\n- Items in `list_filter` must refer to a Field (admin.E116).\n- `list_select_related` must be a boolean, tuple, or list (admin.E117).\n- `list_per_page` must be an integer (admin.E118).\n- `list_max_show_all` must be an integer (admin.E119).\n- `list_editable` must be a list or tuple (admin.E120).\n- Items in `list_editable` must be fields of the model (admin.E121).\n- Items in `list_editable` must also be present in `list_display` (admin.E122).\n- Items in `list_editable` cannot also be in `list_display_links` (admin.E123).\n- The first field in the model cannot be in `list_editable` in certain configurations (admin.E124).\n\nThese checks are performed in **Django 5.1** (Passage 4).\n\nAdditionally, from **Django 5.1** (Passage 1 & 3):\n- A `ModelAdmin` class is optional. If no custom values are defined, you can simply call `admin.site.register(Author)` without providing a `ModelAdmin` subclass (Passage 1).\n- The default admin class used is `django.contrib.admin.ModelAdmin` (Passage 3, `AdminSite.register` method).\n\nNo other `ModelAdmin` options or settings are specified in the provided passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is almost entirely about admin.E* validation error codes rather than documenting the actual ModelAdmin options, attributes, and their correct usage in Django 5.1, making it irrelevant to the user's question about settings and requirements for ModelAdmin options."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_admin_index_txt_5",
+            "django_4_2_ref_contrib_admin_index_txt_5",
+            "django_5_0_ref_contrib_admin_index_txt_5",
+            "django_5_0_releases_1_8_txt_7",
+            "django_4_2_releases_1_8_txt_7"
+          ],
+          "answer": "**Answer:**\n\nAccording to the documentation for **Django 5.1** (Passage 1, Product: Django, Version: 5.1, Section: ModelAdmin options), all options are defined on the `ModelAdmin` subclass as follows:\n\n```python\nfrom django.contrib import admin\n\nclass AuthorAdmin(admin.ModelAdmin):\n    datehierarchy = \"pubdate\"\n```\n\nThe following `ModelAdmin` options are explicitly documented in Django 5.1:\n\n- **ModelAdmin.actions**: A list of actions to make available on the change list page.\n- **ModelAdmin.actions_ontop** and **ModelAdmin.actions_onbottom**: Control where the actions bar appears. By default, `actions_ontop = True` and `actions_onbottom = False`.\n- **ModelAdmin.actions_selectioncounter**: Controls whether a selection counter is displayed next to the action dropdown. Default is `True`.\n- **ModelAdmin.datehierarchy**: Set to the name of a `DateField` or `DateTimeField`. Supports related fields using `__` lookup (e.g. `datehierarchy = \"author__pubdate\"`). Uses `QuerySet.datetimes()` internally.\n- **ModelAdmin.empty_valuedisplay**: Overrides the default display for empty fields (default is `\"-\"`). Example: `empty_valuedisplay = \"-empty-\"`.\n- **ModelAdmin.exclude**: A list of field names to exclude from the form.\n\nThese are the only `ModelAdmin` options for which settings and requirements are provided in the Django 5.1 documentation passage. All options must be defined on a `ModelAdmin` subclass.",
+          "judge_category": "mixed_version",
+          "judge_reason": "The assistant claims to reference Django 5.1 but lists several options (actions_ontop, actions_onbottom, actions_selectioncounter, empty_valuedisplay) whose names and behavior descriptions match older Django versions; in 5.1 these have been renamed to actions_on_top, actions_on_bottom, and show_full_result_count, and the passage provided is actually about list_display and @admin.display, not the ModelAdmin options claimed."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0011",
+      "query_text": "In version 5.1 of Django, what is the procedure for MySQL?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_4_2_releases_0_96_txt_1",
+            "django_5_1_releases_0_96_txt_1",
+            "django_5_0_releases_0_96_txt_1",
+            "django_5_0_topics_db_queries_txt_46",
+            "django_4_2_topics_db_queries_txt_46"
+          ],
+          "answer": "**Answer:**\n\nIn Django 5.1, the MySQL backend requires MySQLdb version 1.2.1p2 or higher. If an older version of MySQLdb is in use, Django will raise exceptions. (Passage 2, Product: Django, Version: 5.1, Section: MySQLdb version requirement)\n\nTo work around this without upgrading MySQLdb, change the `DATABASEENGINE` setting from `\"mysql\"` to `\"mysqlold\"`. (Passage 2, Product: Django, Version: 5.1, Section: MySQLdb version requirement)\n\nThe `\"mysqlold\"` backend is deprecated, will not be actively maintained (except for security fixes), and will be removed in a future release of Django. (Passage 2, Product: Django, Version: 5.1, Section: MySQLdb version requirement)\n\nSome features, such as the `DATABASEOPTIONS` setting, are only available with the `\"mysql\"` backend and are not available when using `\"mysqlold\"`. (Passage 2, Product: Django, Version: 5.1, Section: MySQLdb version requirement)\n\nDjango strongly encourages upgrading to a more recent version of MySQLdb. (Passage 2, Product: Django, Version: 5.1, Section: MySQLdb version requirement)",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is about an outdated MySQLdb version requirement and the removed \"mysqlold\" backend, which has no relation to the actual content of the Django 5.1 gold reference passage about MySQL transaction/schema alteration behavior and index size limits."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_releases_0_96_txt_1",
+            "django_5_1_topics_db_queries_txt_46",
+            "django_5_1_ref_databases_txt_16",
+            "django_5_1_topics_migrations_txt_0",
+            "django_5_1_ref_migration-operations_txt_8"
+          ],
+          "answer": "**Answer:**\n\nIn Django 5.1, the procedure for MySQL is as follows (all information cited from the provided passages for version 5.1):\n\n- Django's default MySQL backend requires MySQLdb version 1.2.1p2 or higher. If an older version is used, Django will raise exceptions (Passage 1, Product: Django, Version: 5.1).\n- To use the older MySQLdb, change `DATABASEENGINE` from `\"mysql\"` to `\"mysqlold\"` in your settings file. However, the \"mysqlold\" backend is deprecated, not actively maintained (except for security fixes), and will be removed in a future release. Some features like `DATABASEOPTIONS` are only available with the \"mysql\" backend (Passage 1, Product: Django, Version: 5.1).\n- The recommended DB API driver for MySQL is **mysqlclient**. MySQL Connector/Python is also supported. Django provides an adapter for mysqlclient; MySQL Connector/Python includes its own (Passage 3, Product: Django, Version: 5.1).\n- For complex operations not supported by Django's ORM, you can use raw SQL via the tools described in `/topics/db/sql`, or use the `migrations.RunSQL` operation (which accepts `sql`, `reversesql`, `stateoperations`, etc.) (Passage 2 and Passage 5, both Product: Django, Version: 5.1).\n- Database schema changes are handled through Migrations using `django.db.migrations` (Passage 4, Product: Django, Version: 5.1).\n\nThese are the only procedures and requirements explicitly stated for MySQL in the provided Django 5.1 passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is almost entirely irrelevant to the actual content of the Django 5.1 MySQL passage, which discusses transaction limitations around schema alterations, DDL performance, locking behavior, and index column size limits; none of the information about MySQLdb versions, mysqlold backend, mysqlclient, raw SQL, or migrations in the assistant's response appears in the provided 5.1 gold reference."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_4_2_topics_db_transactions_txt_17",
+            "django_5_0_topics_db_transactions_txt_17",
+            "django_5_1_topics_db_transactions_txt_17",
+            "django_5_0_topics_db_queries_txt_46",
+            "django_5_1_topics_db_queries_txt_46"
+          ],
+          "answer": "**Answer:**\n\nIn Django 5.1, if you are using MySQL, your tables may or may not support transactions; it depends on your MySQL version and the table types you're using (By \"table types,\" we mean something like \"InnoDB\" or \"MyISAM\"). (Passage 3, Product: Django, Version: 5.1, Section: Transactions in MySQL)\n\nIf your MySQL setup does not support transactions, then Django 5.1 will always function in autocommit mode: statements will be executed and committed as soon as they're called. (Passage 3, Product: Django, Version: 5.1, Section: Transactions in MySQL)\n\nIf your MySQL setup does support transactions, Django 5.1 will handle transactions as explained in this document. (Passage 3, Product: Django, Version: 5.1, Section: Transactions in MySQL)\n\nMySQL transaction peculiarities are outside the scope of this article, but the MySQL site has information on MySQL transactions. (Passage 3, Product: Django, Version: 5.1, Section: Transactions in MySQL)",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer is about transaction handling and autocommit behavior in MySQL, which is irrelevant to the actual content of the gold reference passage for Django 5.1 that discusses schema alteration limitations, DDL performance, locking, and index column size limits."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0012",
+      "query_text": "In Django 5.1, how do I configure Output styles?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_0_ref_contrib_admin_index_txt_50",
+            "django_4_2_ref_contrib_admin_index_txt_49",
+            "django_5_1_ref_contrib_admin_index_txt_50",
+            "django_4_2_topics_i18n_formatting_txt_2",
+            "django_5_1_topics_i18n_formatting_txt_2"
+          ],
+          "answer": "**Answer:**\n\nI cannot provide instructions for configuring \"Output styles\" in Django 5.1.\n\nThe provided documentation passages for Django 5.1 (Passage 3 and Passage 5) only cover **Theming support** (using CSS variables in `admin/base.html`, defined in `django/contrib/admin/static/admin/css/base.css` and `darkmode.css`, linked via the `{% block dark-mode-vars %}` block) and **Controlling localization in templates** (the `l10n` template library).\n\nNo information about \"Output styles\" is present in any of the supplied passages for Django 5.1 (or any other version). Per the instructions, I cannot assume or invent information not present in the passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly states that no information exists about output styles in Django 5.1 and refuses to answer, while the gold reference passage directly provides the correct guidance for configuring form output styles in Django 5.1."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_admin_index_txt_50",
+            "django_5_1_topics_i18n_formatting_txt_2",
+            "django_5_1_releases_1_4_txt_10",
+            "django_5_1_releases_4_1_txt_2",
+            "django_5_1_ref_django-admin_txt_42"
+          ],
+          "answer": "**Answer:**\n\nAccording to the provided documentation for **Django 5.1**, there is no section or information about configuring \"Output styles\".\n\nThe closest related topic in the passages is **Form rendering accessibility** (Passage 4, Product: Django, Version: 5.1), which discusses new `<div>`-based form templates that will become the default form rendering style from Django 5.0 onward. It states that the default form and formset templates are now configurable at the project level via the `FORMRENDERER` setting.\n\nNo other passages mention output styles, form output configuration, or related template output styling mechanisms.\n\nIf \"Output styles\" refers to something else (such as CSS theming, localization output, or syntax highlighting colors), please provide more context, as it is not covered in the supplied documentation passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant incorrectly states there is no information about configuring output styles in Django 5.1, while the gold reference passage directly explains how to configure form output styles (the clear intended meaning of \"Output styles\" in this context) using custom form templates and the asdiv()/as_table() helper methods."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_4_2_ref_templates_builtins_txt_3",
+            "django_5_1_ref_templates_builtins_txt_3",
+            "django_5_0_ref_templates_builtins_txt_3",
+            "django_5_1_topics_i18n_formatting_txt_2",
+            "django_5_0_topics_i18n_formatting_txt_2"
+          ],
+          "answer": "**I cannot provide an answer using ONLY the provided documentation passages.**\n\nThe passages for Django 5.1 (Passage 2 and Passage 4) only cover the `{% cycle %}` template tag and the `l10n` template library for controlling localization. They contain **no information** about \"Output styles\" or how to configure them.\n\nPer the instructions, I must not assume or invent any information not present in the passages. Therefore, I have no valid response for this query based on the given documentation.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly refuses to answer due to lack of relevant information in the provided passages, but this does not constitute giving instructions for Django 5.1, making the response a failure to answer the user's question about configuring output styles."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0013",
+      "query_text": "What is the recommended setup for Models across files in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_4_2_ref_contrib_staticfiles_txt_0",
+            "django_5_0_ref_contrib_staticfiles_txt_0",
+            "django_5_1_ref_contrib_staticfiles_txt_0",
+            "django_5_0_topics_db_models_txt_2",
+            "django_4_2_topics_db_models_txt_2"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages do **not** contain any information about the recommended setup for Models across files (or splitting models across multiple files) in Django 5.1.\n\nThe only passages available for Django 5.1 discuss the `django.contrib.staticfiles` app (Passage 3). There is no section on models for version 5.1. The passages that discuss using models (Passages 4 and 5) are for Django 5.0 and 4.2 respectively, and they only cover adding an app containing a `models.py` file to `INSTALLED_APPS` followed by running migrations. They do not address splitting models across multiple files.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant answer claims there is no information for Django 5.1 and fails to provide the recommended setup for models across files, even though the gold reference passage for exactly version 5.1 exists and directly addresses cross-app model relationships."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_ref_contrib_staticfiles_txt_0",
+            "django_5_1_topics_db_models_txt_2",
+            "django_5_1_topics_files_txt_2",
+            "django_5_1_intro_tutorial06_txt_0",
+            "django_5_1_intro_reusable-apps_txt_2"
+          ],
+          "answer": "**Answer:**\n\nThe provided documentation passages do **not** contain any information about the recommended setup for Models across multiple files in Django 5.1.\n\nThe only passage that discusses models (Passage 2, Product: Django, Version: 5.1, Section: Using models) only covers adding an app containing a single `models.py` to `INSTALLED_APPS` and running migrations. No guidance is given on splitting models across multiple files.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant fails to answer the question by claiming no relevant documentation exists, instead of providing the 5.1 guidance on cross-file/app model relations via imports or lazy string references."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_4_2_ref_contrib_staticfiles_txt_0",
+            "django_5_0_ref_contrib_staticfiles_txt_0",
+            "django_5_1_ref_contrib_staticfiles_txt_0",
+            "django_5_0_topics_files_txt_1",
+            "django_4_2_topics_files_txt_1"
+          ],
+          "answer": "**I cannot provide an answer.**\n\nThe provided documentation passages contain **no information** about recommended setups for Models across files (such as using multiple models.py files, splitting models into separate modules, best practices for large projects, or importing models from other files) in Django 5.1 or any other version.\n\nAll passages only discuss:\n- django.contrib.staticfiles (versions 4.2, 5.0, 5.1)\n- Using FileField/ImageField in models (versions 4.2 and 5.0)\n\nPer the instructions, I must answer using **ONLY** the provided documentation passages and cannot assume or invent information not present. No relevant content exists for this question.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly refused to answer due to lack of relevant information in the retrieved passages, but this still constitutes a failure to answer the user's question about the recommended setup."
+        }
+      }
+    },
+    {
+      "query_id": "q_django_0014",
+      "query_text": "Where can I find instructions to manage GDALRaster in Django 5.1?",
+      "product": "Django",
+      "target_version": "5.1",
+      "version_stated": true,
+      "systems": {
+        "B_Euclidean": {
+          "retrieved_passage_ids": [
+            "django_5_1_intro_contributing_txt_3",
+            "django_5_0_intro_contributing_txt_3",
+            "django_4_2_intro_contributing_txt_3",
+            "django_5_0_intro_contributing_txt_1",
+            "django_4_2_intro_contributing_txt_1"
+          ],
+          "answer": "**I cannot provide an answer using ONLY the provided documentation passages.**\n\nThe passages discuss only:\n- Installing Git (for Django 5.1, 5.0, and 4.2)\n- Who the contributing tutorial is for (Django 5.0 and 4.2)\n\nNone of them mention GDALRaster, raster management, GIS features, or where to find such instructions. Therefore, per the instructions, I cannot assume or invent any information not present in the passages.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly refused to answer because the retrieved passages contained no relevant information about GDALRaster, which is the appropriate action when the provided documentation does not cover the query."
+        },
+        "C_Euclidean_Filter": {
+          "retrieved_passage_ids": [
+            "django_5_1_intro_contributing_txt_3",
+            "django_5_1_ref_contrib_gis_gdal_txt_0",
+            "django_5_1_intro_tutorial02_txt_0",
+            "django_5_1_intro_contributing_txt_1",
+            "django_5_1_ref_contrib_gis_gdal_txt_25"
+          ],
+          "answer": "**Answer:**\n\nYou can find instructions to manage GDALRaster in Django 5.1 in the section **Creating rasters from data** (Product: Django, Version: 5.1).\n\nThis section describes how to create rasters from scratch using the `dsinput` parameter with the GDALRaster constructor. It covers passing a dictionary containing parameters such as origin, size, spatial reference system, pixel data, and format. It also explains that the resulting raster can be file-based or memory-based depending on the driver, and that the dictionary definition is specific to Django (inspired by GeoJSON).\n\nFor additional context on the underlying library, see the **GDAL API** section (Product: Django, Version: 5.1), which documents `django.contrib.gis.gdal` as GeoDjango\u2019s high-level interface to the GDAL library (including limited support for raster data).\n\nNo other passages in the provided documentation contain instructions for managing GDALRaster.",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant's answer claims instructions exist in a \"Creating rasters from data\" section and references a `dsinput` parameter and dictionary-based constructor, but the provided gold reference passage for Django 5.1 contains no such section or instructions and instead documents properties like srs, srid, geotransform, origin, scale, and skew."
+        },
+        "D_Hyperbolic_384d": {
+          "retrieved_passage_ids": [
+            "django_5_1_faq_general_txt_7",
+            "django_4_2_faq_general_txt_7",
+            "django_5_0_faq_general_txt_7",
+            "django_5_0_howto_deployment_wsgi_uwsgi_txt_0",
+            "django_4_2_howto_deployment_wsgi_uwsgi_txt_0"
+          ],
+          "answer": "**Answer:**\n\nI cannot provide instructions for managing GDALRaster in Django 5.1.\n\nThe provided documentation passages only contain information about downloading the Django documentation to read it offline (for Django versions 5.1, 5.0, and 4.2) and uWSGI installation prerequisites (for Django versions 5.0 and 4.2). No passages mention GDALRaster, its management, or any related instructions for Django 5.1 (or any version).",
+          "judge_category": "wrong",
+          "judge_reason": "The assistant correctly states that the retrieved passages contain no information about GDALRaster, but then fails to answer the user's question by not providing the actual instructions for managing GDALRaster in Django 5.1, even though relevant content exists in the gold reference passage for that version."
+        }
+      }
+    }
+  ],
+  "system_scores": {
+    "B_Euclidean": {
+      "version_correct": 12,
+      "mixed_version": 4,
+      "wrong": 14,
+      "version_correct_rate": 0.4,
+      "mixed_version_rate": 0.1333,
+      "wrong_rate": 0.4667
+    },
+    "C_Euclidean_Filter": {
+      "version_correct": 10,
+      "mixed_version": 2,
+      "wrong": 18,
+      "version_correct_rate": 0.3333,
+      "mixed_version_rate": 0.0667,
+      "wrong_rate": 0.6
+    },
+    "D_Hyperbolic_384d": {
+      "version_correct": 7,
+      "mixed_version": 2,
+      "wrong": 21,
+      "version_correct_rate": 0.2333,
+      "mixed_version_rate": 0.0667,
+      "wrong_rate": 0.7
+    }
+  },
+  "human_validation": {
+    "total_checked": 20,
+    "agreements": 7,
+    "agreement_rate": 0.35,
+    "details": [
+      {
+        "query_id": "q_nextcloud_0000",
+        "system": "B_Euclidean",
+        "llm_judge_category": "version_correct",
+        "human_category": "version_correct",
+        "agreement": true
+      },
+      {
+        "query_id": "q_nextcloud_0000",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "version_correct",
+        "human_category": "version_correct",
+        "agreement": true
+      },
+      {
+        "query_id": "q_nextcloud_0001",
+        "system": "B_Euclidean",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0001",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0002",
+        "system": "B_Euclidean",
+        "llm_judge_category": "mixed_version",
+        "human_category": "mixed_version",
+        "agreement": true
+      },
+      {
+        "query_id": "q_nextcloud_0002",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0003",
+        "system": "B_Euclidean",
+        "llm_judge_category": "mixed_version",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0003",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0004",
+        "system": "B_Euclidean",
+        "llm_judge_category": "version_correct",
+        "human_category": "version_correct",
+        "agreement": true
+      },
+      {
+        "query_id": "q_nextcloud_0004",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0005",
+        "system": "B_Euclidean",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0005",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "version_correct",
+        "human_category": "version_correct",
+        "agreement": true
+      },
+      {
+        "query_id": "q_nextcloud_0006",
+        "system": "B_Euclidean",
+        "llm_judge_category": "version_correct",
+        "human_category": "version_correct",
+        "agreement": true
+      },
+      {
+        "query_id": "q_nextcloud_0006",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "mixed_version",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0007",
+        "system": "B_Euclidean",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0007",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0008",
+        "system": "B_Euclidean",
+        "llm_judge_category": "mixed_version",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0008",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0009",
+        "system": "B_Euclidean",
+        "llm_judge_category": "wrong",
+        "human_category": "version_correct",
+        "agreement": false
+      },
+      {
+        "query_id": "q_nextcloud_0009",
+        "system": "D_Hyperbolic_384d",
+        "llm_judge_category": "version_correct",
+        "human_category": "version_correct",
+        "agreement": true
+      }
+    ]
+  }
+}

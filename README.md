@@ -16,4 +16,5 @@ Question: do hierarchy aware hyperbolic embeddings reduce these contradictory re
 - Phase 2: Baselines implementation (BM25, Euclidean, Filter, RRF). Completed.
 - Phase 3: Hyperbolic model implementation and training (Lorentz model, 384d and 32d). Completed.
 - Phase 4: Evaluation, metrics computation, and publication figures. Completed.
+- Answer-Level LLM Validation: Completed using Grok API (`grok-4.20-0309-non-reasoning`).
 - Phase 5: Final report (`docs/REPORT.md`) and presentation inputs (`docs/SLIDE_INPUTS.md`). Completed.

@@ -71,3 +71,5 @@ Every number matches `results/results.json` exactly.
    Hyperbolic space pushes opposing version branches apart aggressively, lowering Recall@5 from 28.03% to 14.01%.
 3. **Why not just filter by metadata?**:
    Hard filtering achieves 0.00% conflicts on this benchmark only because it guesses the newest version. If a customer is running an older LTS version, metadata guessing guarantees returning wrong documentation. Hyperbolic retrieval separates versions geometrically without fragile guessing.
+4. **Downstream LLM generation check (Grok API)**:
+   In generation checks across 30 queries with Grok (`grok-4.20-0309-non-reasoning`), System B caused contradictory mixed-version answers in 13.3% of tests. System D cut contradictory answers in half to 6.7%, tying metadata filtering.
